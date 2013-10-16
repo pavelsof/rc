@@ -4,7 +4,6 @@ filetype plugin indent on  " enable file type detection
 syntax enable
 
 " settings
-set autochdir  " sync working dir
 set autoindent  " follow indentation of last line
 set autoread  " auto-detect file changes
 set backspace=2
@@ -14,6 +13,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 " set foldmethod=indent  " automatic folding of indented blocks
 set guioptions+=a  " visual selection goes to clipboard
+set guioptions-=e  " better looking window tabs
 set guioptions-=m  " remove menu bar
 set guioptions-=r  " remove right-hand scroll
 set guioptions-=T  " remove toolbar
@@ -29,6 +29,7 @@ set number
 set omnifunc=syntaxcomplete#Complete  " native auto-completion
 set ruler
 set shiftwidth=4  " width of indentation
+set showtabline=2  " always show tab page labels
 set smartcase  " if capital letter, search is case-sensitive
 set smarttab
 set tabstop=4
@@ -45,11 +46,14 @@ inoremap  <C-S-tab> 	<ESC>:tabprevious<CR>i
 inoremap  <C-t> 		<ESC>:tabnew<CR>
 
 " event hooks
-autocmd GUIEnter * simalt ~x  " start with a maximised window
+" .. start with a maximised window (done by gvimfullscreen_win32)
+" autocmd GUIEnter * simalt ~x
 
 " plugins
 " .. pathogen
 execute pathogen#infect()
+" .. gvimfullscreen_win32
+autocmd GUIEnter * call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)
 " .. neocomplcache
 let g:neocomplcache_enable_at_startup=1
 
