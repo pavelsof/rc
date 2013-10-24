@@ -12,8 +12,10 @@ set equalalways
 set encoding=utf-8
 set fileencoding=utf-8
 " set foldmethod=indent  " automatic folding of indented blocks
+set gdefault  " substitution is done on all matches in a line
 set guioptions+=a  " visual selection goes to clipboard
 set guioptions-=e  " better looking window tabs
+set guioptions-=L  " remove left-hand scroll
 set guioptions-=m  " remove menu bar
 set guioptions-=r  " remove right-hand scroll
 set guioptions-=T  " remove toolbar
