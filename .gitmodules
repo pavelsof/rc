@@ -1,0 +1,9 @@
+[submodule "vimfiles/bundle/neocomplcache"]
+	path = vimfiles/bundle/neocomplcache
+	url = https://github.com/Shougo/neocomplcache.vim
+[submodule "vimfiles/bundle/gvimfullscreen_win32"]
+	path = vimfiles/bundle/gvimfullscreen_win32
+	url = https://github.com/derekmcloughlin/gvimfullscreen_win32
+[submodule "vimfiles/bundle/ctrlp.vim"]
+	path = vimfiles/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim
