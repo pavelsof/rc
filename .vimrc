@@ -11,6 +11,7 @@ set clipboard+=unnamed  " use the normal clipboard
 set equalalways
 set encoding=utf-8
 set fileencoding=utf-8
+set fileformat=unix
 set foldcolumn=1  " width of the column used to indicate folds
 set foldlevelstart=42  " no closed folds at start
 set foldmethod=indent  " automatic folding of indented blocks
