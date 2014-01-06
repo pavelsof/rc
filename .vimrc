@@ -8,6 +8,7 @@ set autoindent  " follow indentation of last line
 set autoread  " auto-detect file changes
 set backspace=2
 set clipboard+=unnamed  " use the normal clipboard
+set completeopt=menuone  " autocompletion popup menu
 set equalalways
 set encoding=utf-8
 set fileencoding=utf-8
