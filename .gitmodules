@@ -7,3 +7,6 @@
 [submodule "vimfiles/bundle/ctrlp.vim"]
 	path = vimfiles/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
+[submodule "vimfiles/bundle/MatchTag"]
+	path = vimfiles/bundle/MatchTag
+	url = https://github.com/gregsexton/MatchTag.git
