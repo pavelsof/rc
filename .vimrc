@@ -24,7 +24,6 @@ set guioptions-=L  " remove left-hand scroll
 set guioptions-=m  " remove menu bar
 set guioptions-=r  " remove right-hand scroll
 set guioptions-=T  " remove toolbar
-set guifont=Consolas:h11
 set helplang=  " inglés por favor
 set hlsearch  " highlight search matches
 set ignorecase  " search is case-insensitive
@@ -43,6 +42,11 @@ set tabstop=4
 set wildmenu  " enhanced auto-completion for the command line
 set writebackup  " create backup file while editing
 
+" .. conditional settings
+if has('win32') || has('win32unix')
+	set guifont=Consolas:h11
+endif
+
 " key mappings
 " .. browser-like tabs
 nnoremap  <C-tab> 		:tabnext<CR>
@@ -53,14 +57,21 @@ inoremap  <C-S-tab> 	<ESC>:tabprevious<CR>i
 inoremap  <C-t> 		<ESC>:tabnew<CR>
 
 " event hooks
-" .. start with a maximised window (done by gvimfullscreen_win32)
-" autocmd GUIEnter * simalt ~x
+" .. start with a maximised window
+if has('gui_running')
+	if has('win32') || has('win32unix')
+		" autocmd GUIEnter * simalt ~x
+		" gvimfullscreen_win32
+		autocmd GUIEnter * call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)
+	else
+		autocmd GUIEnter * silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
+	endif
+endif
+
 
 " plugins
 " .. pathogen
 execute pathogen#infect()
-" .. gvimfullscreen_win32
-autocmd GUIEnter * call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)
 " .. neocomplcache
 let g:neocomplcache_enable_at_startup=1
 
