@@ -1,0 +1,7 @@
+[user]
+	email = pavelsof@gmail.com
+	name = pavelsof
+[color]
+	ui = true
+[core]
+	editor = vim
