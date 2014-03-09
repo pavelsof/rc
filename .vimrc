@@ -61,6 +61,10 @@ inoremap  <CR>			<CR>42<BS><BS>
 nnoremap  o				o42<BS><BS>
 nnoremap  O				O42<BS><BS>
 
+" .. no habit should die!
+inoremap  <C-s>			<ESC>:w<CR>i
+nnoremap  <C-s>			:w<CR>
+
 " event hooks
 " .. start with a maximised window
 if has('gui_running')
