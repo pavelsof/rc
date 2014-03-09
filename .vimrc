@@ -13,7 +13,7 @@ set equalalways
 set encoding=utf-8
 set fileencoding=utf-8
 set fileformat=unix
-set foldcolumn=3  " width of the column used to indicate folds
+set foldcolumn=4  " width of the column used to indicate folds
 set foldlevelstart=42  " no closed folds at start
 set foldmethod=indent  " automatic folding of indented blocks
 set foldnestmax=3  " maximum number of nested folds
@@ -56,6 +56,11 @@ inoremap  <C-tab> 		<ESC>:tabnext<CR>i
 inoremap  <C-S-tab> 	<ESC>:tabprevious<CR>i
 inoremap  <C-t> 		<ESC>:tabnew<CR>
 
+" .. prevent vim from removing tab-only lines
+inoremap  <CR>			<CR>42<BS><BS>
+nnoremap  o				o42<BS><BS>
+nnoremap  O				O42<BS><BS>
+
 " event hooks
 " .. start with a maximised window
 if has('gui_running')
@@ -67,6 +72,7 @@ if has('gui_running')
 		autocmd GUIEnter * silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
 	endif
 endif
+
 " .. remember folds and cursor position
 autocmd BufWinLeave *.css,*.js,*.less,*.php,*.py mkview
 autocmd BufWinEnter *.css,*.js,*.less,*.php,*.py silent loadview
