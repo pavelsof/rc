@@ -16,7 +16,7 @@ set fileformat=unix
 set foldcolumn=3  " width of the column used to indicate folds
 set foldlevelstart=42  " no closed folds at start
 set foldmethod=indent  " automatic folding of indented blocks
-set foldnestmax=2  " maximum number of nested folds
+set foldnestmax=3  " maximum number of nested folds
 set gdefault  " substitution is done on all matches in a line
 set guioptions+=a  " visual selection goes to clipboard
 set guioptions-=e  " better looking window tabs
@@ -67,7 +67,9 @@ if has('gui_running')
 		autocmd GUIEnter * silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
 	endif
 endif
-
+" .. remember folds and cursor position
+autocmd BufWinLeave *.css,*.js,*.less,*.php,*.py mkview
+autocmd BufWinEnter *.css,*.js,*.less,*.php,*.py silent loadview
 
 " plugins
 " .. pathogen
