@@ -77,6 +77,9 @@ if has('gui_running')
 	endif
 endif
 
+" .. recognise .less files
+autocmd BufRead *.less set filetype=css
+
 " .. remember folds and cursor position
 autocmd BufWinLeave *.css,*.js,*.less,*.php,*.py mkview
 autocmd BufWinEnter *.css,*.js,*.less,*.php,*.py silent loadview
