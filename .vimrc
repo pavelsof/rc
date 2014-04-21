@@ -62,7 +62,7 @@ nnoremap  o				o42<BS><BS>
 nnoremap  O				O42<BS><BS>
 
 " .. no habit should die!
-inoremap  <C-s>			<ESC>:w<CR>i
+inoremap  <C-s>			<ESC>:w<CR>
 nnoremap  <C-s>			:w<CR>
 
 " event hooks
