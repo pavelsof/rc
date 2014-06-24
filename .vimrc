@@ -30,6 +30,7 @@ set ignorecase  " search is case-insensitive
 set incsearch  " highlight search matches while typing
 set nobackup  " do not hold backups after the file is written to
 set nobomb  " without BOM
+set nocindent  " cindent does not behave well with js
 set noerrorbells visualbell t_vb=
 set number
 set omnifunc=syntaxcomplete#Complete  " native auto-completion
