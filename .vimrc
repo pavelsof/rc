@@ -40,6 +40,7 @@ set showtabline=2  " always show tab page labels
 set smartcase  " if capital letter, search is case-sensitive
 set smarttab
 set tabstop=4
+set wildignore+=*/node_modules/*
 set wildmenu  " enhanced auto-completion for the command line
 set writebackup  " create backup file while editing
 
