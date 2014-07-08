@@ -18,6 +18,7 @@ set foldlevelstart=42  " no closed folds at start
 set foldmethod=indent  " automatic folding of indented blocks
 set foldnestmax=3  " maximum number of nested folds
 set gdefault  " substitution is done on all matches in a line
+set guicursor+=a:blinkon0  " Diaspar's central computer does not blink
 set guioptions+=a  " visual selection goes to clipboard
 set guioptions-=e  " better looking window tabs
 set guioptions-=L  " remove left-hand scroll
