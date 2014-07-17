@@ -50,6 +50,9 @@ if has('win32') || has('win32unix')
 	set guifont=Consolas:h11
 endif
 
+" .. global variables
+let g:netrw_liststyle=3  " good tree
+
 " key mappings
 " .. browser-like tabs
 nnoremap  <C-tab> 		:tabnext<CR>
