@@ -84,6 +84,9 @@ if has('gui_running')
 	endif
 endif
 
+" .. recognise .md files
+autocmd BufRead *.md set filetype=markdown
+
 " .. recognise .less files
 autocmd BufRead *.less set filetype=css
 
