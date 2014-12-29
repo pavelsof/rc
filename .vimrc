@@ -86,6 +86,10 @@ endif
 
 " .. recognise .md files
 autocmd BufRead *.md set filetype=markdown
+autocmd BufRead README.md 
+				\ setlocal formatoptions+=c |  " auto-wrap comments
+				\ setlocal formatoptions+=t |  " and non-comments
+				\ setlocal textwidth=80  " to be <= 80 chars wide
 
 " .. recognise .less files
 autocmd BufRead *.less set filetype=css
