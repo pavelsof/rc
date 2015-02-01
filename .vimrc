@@ -36,6 +36,7 @@ set noerrorbells visualbell t_vb=
 set number
 set omnifunc=syntaxcomplete#Complete  " native auto-completion
 set ruler
+set shiftround  " < and > go for multiples of shiftwidth
 set shiftwidth=4  " width of indentation
 set showtabline=2  " always show tab page labels
 set smartcase  " if capital letter, search is case-sensitive
@@ -84,19 +85,47 @@ if has('gui_running')
 	endif
 endif
 
-" .. recognise .md files
-autocmd BufRead *.md set filetype=markdown
-autocmd BufRead README.md 
-				\ setlocal formatoptions+=c |  " auto-wrap comments
-				\ setlocal formatoptions+=t |  " and non-comments
-				\ setlocal textwidth=80  " to be <= 80 chars wide
+" .. recognise certain file extensions
+augroup bufread_less
+	autocmd!
+	autocmd BufRead,BufNewFile *.less set filetype=css
+augroup END
 
-" .. recognise .less files
-autocmd BufRead *.less set filetype=css
+augroup bufread_md
+	autocmd!
+	autocmd BufRead,BufNewFile *.md set filetype=markdown
+augroup END
 
 " .. remember folds and cursor position
-autocmd BufWinLeave *.css,*.js,*.less,*.php,*.py mkview
-autocmd BufWinEnter *.css,*.js,*.less,*.php,*.py silent loadview
+augroup bufwinenter_code
+	autocmd!
+	autocmd BufWinEnter *.css,*.js,*.less,*.php,*.py silent loadview
+augroup END
+
+augroup bufwinleave_code
+	autocmd!
+	autocmd BufWinLeave *.css,*.js,*.less,*.php,*.py mkview
+augroup END
+
+" .. javascript
+augroup filetype_javascript
+	autocmd!
+	autocmd FileType javascript nnoremap <buffer> <LocalLeader>c I// <ESC>hh
+augroup END
+
+" .. markdown
+augroup filetype_markdown
+	autocmd!
+	autocmd FileType markdown setlocal formatoptions+=c |  " auto-wrap comments
+	autocmd FileType markdown setlocal formatoptions+=t |  " and non-comments
+	autocmd FileType markdown setlocal textwidth=80  " to be <= 80 chars wide
+augroup END
+
+" .. python
+augroup filetype_python
+	autocmd!
+	autocmd FileType python nnoremap <buffer> <localleader>c I# <ESC>h
+augroup END
 
 " plugins
 " .. pathogen
