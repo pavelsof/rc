@@ -107,17 +107,23 @@ augroup bufwinleave_code
 	autocmd BufWinLeave *.css,*.js,*.less,*.php,*.py mkview
 augroup END
 
+" .. css
+augroup filetype_css
+	autocmd!
+	autocmd FileType css nnoremap <buffer> <localleader>c I/* <ESC>A */<ESC>0l
+augroup END
+
 " .. javascript
 augroup filetype_javascript
 	autocmd!
-	autocmd FileType javascript nnoremap <buffer> <LocalLeader>c I// <ESC>hh
+	autocmd FileType javascript nnoremap <buffer> <localleader>c I// <ESC>hh
 augroup END
 
 " .. markdown
 augroup filetype_markdown
 	autocmd!
-	autocmd FileType markdown setlocal formatoptions+=c |  " auto-wrap comments
-	autocmd FileType markdown setlocal formatoptions+=t |  " and non-comments
+	autocmd FileType markdown setlocal formatoptions+=c  " auto-wrap comments
+	autocmd FileType markdown setlocal formatoptions+=t  " and non-comments
 	autocmd FileType markdown setlocal textwidth=80  " to be <= 80 chars wide
 augroup END
 
@@ -125,6 +131,7 @@ augroup END
 augroup filetype_python
 	autocmd!
 	autocmd FileType python nnoremap <buffer> <localleader>c I# <ESC>h
+	autocmd FileType python nnoremap <buffer> <localleader>C lF#xx
 augroup END
 
 " plugins
