@@ -57,21 +57,27 @@ let g:netrw_liststyle=3  " good tree
 
 " key mappings
 " .. browser-like tabs
-nnoremap  <C-tab> 		:tabnext<CR>
-nnoremap  <C-S-tab> 	:tabprevious<CR>
-nnoremap  <C-t> 		:tabnew<CR>
-inoremap  <C-tab> 		<ESC>:tabnext<CR>i
-inoremap  <C-S-tab> 	<ESC>:tabprevious<CR>i
-inoremap  <C-t> 		<ESC>:tabnew<CR>
+nnoremap  <c-tab> 		:tabnext<cr>
+nnoremap  <c-s-tab> 	:tabprevious<cr>
+nnoremap  <c-t> 		:tabnew<cr>
+inoremap  <c-tab> 		<esc>:tabnext<cr>i
+inoremap  <c-s-tab> 	<esc>:tabprevious<cr>i
+inoremap  <c-t> 		<esc>:tabnew<cr>
 
 " .. prevent vim from removing tab-only lines
-inoremap  <CR>			<CR>42<BS><BS>
-nnoremap  o				o42<BS><BS>
-nnoremap  O				O42<BS><BS>
+inoremap  <cr>			<cr>42<bs><bs>
+nnoremap  o				o42<bs><bs>
+nnoremap  O				O42<bs><bs>
 
 " .. no habit should die!
-inoremap  <C-s>			<ESC>:w<CR>
-nnoremap  <C-s>			:w<CR>
+inoremap  <c-s>			<esc>:w<cr>
+nnoremap  <c-s>			:w<cr>
+
+" .. easier :noh
+nnoremap  <leader><space>	:noh<cr>
+
+" .. spells
+nnoremap  <leader>en	:setlocal spell! spelllang=en_gb<cr>
 
 " event hooks
 " .. start with a maximised window
@@ -110,13 +116,13 @@ augroup END
 " .. css
 augroup filetype_css
 	autocmd!
-	autocmd FileType css nnoremap <buffer> <localleader>c I/* <ESC>A */<ESC>0l
+	autocmd FileType css nnoremap <buffer> <localleader>c mCI/* <esc>A */<esc>`Clll
 augroup END
 
 " .. javascript
 augroup filetype_javascript
 	autocmd!
-	autocmd FileType javascript nnoremap <buffer> <localleader>c I// <ESC>hh
+	autocmd FileType javascript nnoremap <buffer> <localleader>c mCI// <esc>`Clll
 augroup END
 
 " .. markdown
@@ -130,8 +136,8 @@ augroup END
 " .. python
 augroup filetype_python
 	autocmd!
-	autocmd FileType python nnoremap <buffer> <localleader>c I# <ESC>h
-	autocmd FileType python nnoremap <buffer> <localleader>C lF#xx
+	autocmd FileType python nnoremap <buffer> <localleader>c mCI# <esc>`Cll
+	autocmd FileType python nnoremap <buffer> <localleader>C g_F#xx
 augroup END
 
 " plugins
