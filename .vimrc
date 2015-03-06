@@ -119,11 +119,20 @@ augroup filetype_css
 	autocmd FileType css nnoremap <buffer> <localleader>c mCI/* <esc>A */<esc>`Clll
 augroup END
 
-" .. javascript
+" .. javascript and java
 augroup filetype_javascript
 	autocmd!
-	autocmd FileType javascript nnoremap <buffer> <localleader>c mCI// <esc>`Clll
+	autocmd FileType javascript,java nnoremap <buffer> <localleader>c mCI// <esc>`Clll
+	autocmd FileType javascript,java setlocal foldmethod=marker
+	autocmd FileType javascript,java setlocal foldmarker={,}
+	autocmd FileType javascript,java setlocal foldtext=GetCleanFoldText()
 augroup END
+
+function! GetCleanFoldText()  " defines the folded line content
+	let line = getline(v:foldstart)
+	let line = substitute(line, "\t", "    ", 'g')
+	return line
+endfunction
 
 " .. markdown
 augroup filetype_markdown
@@ -139,6 +148,22 @@ augroup filetype_python
 	autocmd FileType python nnoremap <buffer> <localleader>c mCI# <esc>`Cll
 	autocmd FileType python nnoremap <buffer> <localleader>C g_F#xx
 augroup END
+
+" functions
+" .. function to delete current file's view
+" .. http://www.vim.org/scripts/script.php?script_id=5109
+function! DeleteView()
+	let path = fnamemodify(bufname('%'),':p')
+	let path = substitute(path, '=', '==', 'g')
+	if empty($HOME)
+	else
+		let path = substitute(path, '^'.$HOME, '\~', '')
+	endif
+	let path = substitute(path, '/', '=+', 'g') . '='
+	let path = &viewdir.'/'.path
+	call delete(path)
+	echom "Deleted: ".path
+endfunction
 
 " plugins
 " .. pathogen
