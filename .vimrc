@@ -168,6 +168,11 @@ endfunction
 " plugins
 " .. pathogen
 execute pathogen#infect()
+Helptags  " re-generate plugins' docs
+
 " .. neocomplcache
 let g:neocomplcache_enable_at_startup=1
+
+" .. latex-box
+let g:LatexBox_Folding=1  " enable folding
 

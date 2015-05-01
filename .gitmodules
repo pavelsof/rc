@@ -10,3 +10,6 @@
 [submodule "vimfiles/bundle/MatchTag"]
 	path = vimfiles/bundle/MatchTag
 	url = https://github.com/gregsexton/MatchTag.git
+[submodule "vimfiles/bundle/LaTeX-Box"]
+	path = vimfiles/bundle/LaTeX-Box
+	url = git://github.com/LaTeX-Box-Team/LaTeX-Box.git
