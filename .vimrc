@@ -36,13 +36,15 @@ set noerrorbells visualbell t_vb=
 set number
 set omnifunc=syntaxcomplete#Complete  " native auto-completion
 set ruler
+set shell=/bin/bash  " prevent fish from taking over
 set shiftround  " < and > go for multiples of shiftwidth
 set shiftwidth=4  " width of indentation
 set showtabline=2  " always show tab page labels
 set smartcase  " if capital letter, search is case-sensitive
 set smarttab
 set tabstop=4
-set wildignore+=*/build/*  " because angular
+set wildignore+=*/build/*  " because javascript
+set wildignore+=*/bower_components/*
 set wildignore+=*/node_modules/*
 set wildmenu  " enhanced auto-completion for the command line
 set writebackup  " create backup file while editing
