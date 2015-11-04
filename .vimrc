@@ -57,6 +57,7 @@ endif
 " .. global variables
 let g:netrw_liststyle=3  " good tree
 
+
 " key mappings
 " .. browser-like tabs
 nnoremap  <c-tab> 		:tabnext<cr>
@@ -80,6 +81,7 @@ nnoremap  <leader><space>	:noh<cr>
 
 " .. spells
 nnoremap  <leader>en	:setlocal spell! spelllang=en_gb<cr>
+
 
 " event hooks
 " .. start with a maximised window
@@ -151,6 +153,7 @@ augroup filetype_python
 	autocmd FileType python nnoremap <buffer> <localleader>C g_F#xx
 augroup END
 
+
 " functions
 " .. function to delete current file's view
 " .. http://www.vim.org/scripts/script.php?script_id=5109
@@ -167,14 +170,33 @@ function! DeleteView()
 	echom "Deleted: ".path
 endfunction
 
+
 " plugins
 " .. pathogen
 execute pathogen#infect()
 Helptags  " re-generate plugins' docs
 
-" .. neocomplcache
-let g:neocomplcache_enable_at_startup=1
+" .. ack
+nnoremap  <leader>a		:Ack 
+
+" .. gundo
+let g:gundo_help=0  " disable help text
+nnoremap  <leader>u 	:GundoToggle<cr>
 
 " .. latex-box
 let g:LatexBox_Folding=1  " enable folding
+
+" .. neocomplcache
+let g:neocomplcache_enable_at_startup=1
+
+" .. scratch
+let g:scratch_autohide=1
+let g:scratch_insert_autohide=0
+let g:scratch_height=10
+let g:scratch_top=1
+let g:scratch_horizontal=1
+let g:scratch_no_mappings=1
+
+nmap  <leader>s		<plug>(scratch-insert-reuse)
+xmap  <leader>s		<plug>(scratch-selection-reuse)
 

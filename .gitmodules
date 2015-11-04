@@ -13,3 +13,15 @@
 [submodule "vimfiles/bundle/LaTeX-Box"]
 	path = vimfiles/bundle/LaTeX-Box
 	url = git://github.com/LaTeX-Box-Team/LaTeX-Box.git
+[submodule "vimfiles/bundle/ack.vim"]
+	path = vimfiles/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim
+[submodule "vimfiles/bundle/gundo.vim"]
+	path = vimfiles/bundle/gundo.vim
+	url = https://github.com/sjl/gundo.vim
+[submodule "vimfiles/bundle/vim-fireplace"]
+	path = vimfiles/bundle/vim-fireplace
+	url = https://github.com/tpope/vim-fireplace
+[submodule "vimfiles/bundle/scratch.vim"]
+	path = vimfiles/bundle/scratch.vim
+	url = https://github.com/mtth/scratch.vim

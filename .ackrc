@@ -1,0 +1,10 @@
+# do not look into these
+--ignore-directory=bower_components
+--ignore-directory=build
+--ignore-directory=.hypothesis
+
+# just like vim
+--smart-case
+
+# output alphabetically
+--sort-files
