@@ -33,6 +33,7 @@ set nobackup  " do not hold backups after the file is written to
 set nobomb  " without BOM
 set nocindent  " cindent does not behave well with js
 set noerrorbells visualbell t_vb=
+set nowrap  " better for vsplit
 set number
 set omnifunc=syntaxcomplete#Complete  " native auto-completion
 set ruler
@@ -151,6 +152,12 @@ augroup filetype_python
 	autocmd!
 	autocmd FileType python nnoremap <buffer> <localleader>c mCI# <esc>`Cll
 	autocmd FileType python nnoremap <buffer> <localleader>C g_F#xx
+augroup END
+
+" .. tsv
+augroup filetype_tsv
+	autocmd!
+	autocmd BufRead,BufNewFile *.tsv setlocal tabstop=32
 augroup END
 
 

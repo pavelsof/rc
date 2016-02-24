@@ -25,3 +25,4 @@
 [submodule "vimfiles/bundle/scratch.vim"]
 	path = vimfiles/bundle/scratch.vim
 	url = https://github.com/mtth/scratch.vim
+	ignore = dirty
