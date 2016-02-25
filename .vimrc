@@ -43,6 +43,8 @@ set shiftwidth=4  " width of indentation
 set showtabline=2  " always show tab page labels
 set smartcase  " if capital letter, search is case-sensitive
 set smarttab
+set splitbelow  " new :split is below current
+set splitright  " new :vsplit is to the right of the current
 set tabstop=4
 set wildignore+=*/build/*  " because javascript
 set wildignore+=*/bower_components/*
@@ -150,6 +152,8 @@ augroup END
 " .. python
 augroup filetype_python
 	autocmd!
+	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+	" autocmd FileType python setlocal completeopt+=preview
 	autocmd FileType python nnoremap <buffer> <localleader>c mCI# <esc>`Cll
 	autocmd FileType python nnoremap <buffer> <localleader>C g_F#xx
 augroup END
@@ -193,8 +197,9 @@ nnoremap  <leader>u 	:GundoToggle<cr>
 " .. latex-box
 let g:LatexBox_Folding=1  " enable folding
 
-" .. neocomplcache
-let g:neocomplcache_enable_at_startup=1
+" .. neocomplete (former neocomplcache)
+let g:neocomplete#enable_at_startup=1  " start it
+let g:neocomplete#enable_ignore_case=0  " case-sensitive
 
 " .. scratch
 let g:scratch_autohide=1
@@ -206,4 +211,11 @@ let g:scratch_no_mappings=1
 
 nmap  <leader>s		<plug>(scratch-insert-reuse)
 xmap  <leader>s		<plug>(scratch-selection-reuse)
+
+" .. jedi
+let g:jedi#rename_command=""  " no key binding for :call jedi#rename()
+let g:jedi#auto_vim_configuration=0  " do not change completeopt
+let g:jedi#use_tabs_not_buffers=1  " new tabs for gotos
+let g:jedi#completions_enabled=0  " disable jedi auto-completion
+let g:jedi#smart_auto_mappings=0  " do not auto-complete from x import y
 

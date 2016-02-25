@@ -1,6 +1,6 @@
-[submodule "vimfiles/bundle/neocomplcache"]
-	path = vimfiles/bundle/neocomplcache
-	url = https://github.com/Shougo/neocomplcache.vim
+[submodule "vimfiles/bundle/neocomplete.vim"]
+	path = vimfiles/bundle/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim
 [submodule "vimfiles/bundle/gvimfullscreen_win32"]
 	path = vimfiles/bundle/gvimfullscreen_win32
 	url = https://github.com/derekmcloughlin/gvimfullscreen_win32
@@ -26,3 +26,6 @@
 	path = vimfiles/bundle/scratch.vim
 	url = https://github.com/mtth/scratch.vim
 	ignore = dirty
+[submodule "vimfiles/bundle/jedi-vim"]
+	path = vimfiles/bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim
