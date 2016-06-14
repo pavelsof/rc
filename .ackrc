@@ -8,3 +8,6 @@
 
 # output alphabetically
 --sort-files
+
+# add --tsv to the switches set
+--type-set=tsv:ext:tsv

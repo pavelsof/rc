@@ -123,23 +123,28 @@ augroup END
 " .. css
 augroup filetype_css
 	autocmd!
+	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 	autocmd FileType css nnoremap <buffer> <localleader>c mCI/* <esc>A */<esc>`Clll
 augroup END
 
-" .. javascript and java
+" .. javascript
 augroup filetype_javascript
 	autocmd!
-	autocmd FileType javascript,java nnoremap <buffer> <localleader>c mCI// <esc>`Clll
-	autocmd FileType javascript,java setlocal foldmethod=marker
-	autocmd FileType javascript,java setlocal foldmarker={,}
-	autocmd FileType javascript,java setlocal foldtext=GetCleanFoldText()
+	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+	autocmd FileType javascript nnoremap <buffer> <localleader>c mCI// <esc>`Clll
+	autocmd FileType javascript setlocal foldmethod=marker
+	autocmd FileType javascript setlocal foldmarker={,}
+	autocmd FileType javascript setlocal foldtext=GetCleanFoldText()
 augroup END
 
-function! GetCleanFoldText()  " defines the folded line content
-	let line = getline(v:foldstart)
-	let line = substitute(line, "\t", "    ", 'g')
-	return line
-endfunction
+" .. java
+augroup filetype_java
+	autocmd!
+	autocmd FileType java nnoremap <buffer> <localleader>c mCI// <esc>`Clll
+	autocmd FileType java setlocal foldmethod=marker
+	autocmd FileType java setlocal foldmarker={,}
+	autocmd FileType java setlocal foldtext=GetCleanFoldText()
+augroup END
 
 " .. markdown
 augroup filetype_markdown
@@ -161,11 +166,18 @@ augroup END
 " .. tsv
 augroup filetype_tsv
 	autocmd!
-	autocmd BufRead,BufNewFile *.tsv setlocal tabstop=32
+	autocmd BufRead,BufNewFile *.tsv setlocal tabstop=24
 augroup END
 
 
 " functions
+" .. defines the folded line content
+function! GetCleanFoldText()
+	let line = getline(v:foldstart)
+	let line = substitute(line, "\t", "    ", 'g')
+	return line
+endfunction
+
 " .. function to delete current file's view
 " .. http://www.vim.org/scripts/script.php?script_id=5109
 function! DeleteView()
@@ -196,6 +208,7 @@ nnoremap  <leader>u 	:GundoToggle<cr>
 
 " .. latex-box
 let g:LatexBox_Folding=1  " enable folding
+let g:LatexBox_latexmk_options="-xelatex"
 
 " .. neocomplete (former neocomplcache)
 let g:neocomplete#enable_at_startup=1  " start it
