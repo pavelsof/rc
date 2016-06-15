@@ -29,3 +29,6 @@
 [submodule "vimfiles/bundle/jedi-vim"]
 	path = vimfiles/bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim
+[submodule "vimfiles/bundle/vim-characterize"]
+	path = vimfiles/bundle/vim-characterize
+	url = https://github.com/tpope/vim-characterize
