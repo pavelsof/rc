@@ -85,6 +85,49 @@ nnoremap  <leader><space>	:noh<cr>
 " .. spells
 nnoremap  <leader>en	:setlocal spell! spelllang=en_gb<cr>
 
+" .. IPA
+inoremap  <c-p>			<nop>
+
+inoremap  <c-p>td		t̪
+inoremap  <c-p>dd		d̪
+inoremap  <c-p>tr		ʈ
+inoremap  <c-p>dr		ɖ
+inoremap  <c-p>gl		ʔ
+
+inoremap  <c-p>nd		n̪
+inoremap  <c-p>nr		ɳ
+inoremap  <c-p>nj		ɲ
+inoremap  <c-p>ng		ŋ
+
+inoremap  <c-p>rt		ɾ
+inoremap  <c-p>rr		ɽ
+
+inoremap  <c-p>th		θ
+inoremap  <c-p>dh		ð
+inoremap  <c-p>sh		ʃ
+inoremap  <c-p>zh		ʒ
+inoremap  <c-p>hv		ɦ
+
+inoremap  <c-p>lz		ɮ
+
+inoremap  <c-p>vl		ʋ
+
+inoremap  <c-p>lr		ɭ
+
+inoremap  <c-p>yy		ə
+inoremap  <c-p>ep		ɛ
+inoremap  <c-p>uv		ʌ
+inoremap  <c-p>oc		ɔ
+inoremap  <c-p>ae		æ
+
+inoremap  <c-p>-:		ː
+inoremap  <c-p>-.		ˑ
+inoremap  <c-p>-'		ˈ
+inoremap  <c-p>-h		ʰ
+inoremap  <c-p>-j		ʲ
+inoremap  <c-p>-n		ⁿ
+inoremap  <c-p>-w		ʷ
+
 
 " event hooks
 " .. start with a maximised window
