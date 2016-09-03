@@ -104,6 +104,8 @@ inoremap  <c-p>rr		ɽ
 
 inoremap  <c-p>th		θ
 inoremap  <c-p>dh		ð
+inoremap  <c-p>sd		s̪
+inoremap  <c-p>zd		z̪
 inoremap  <c-p>sh		ʃ
 inoremap  <c-p>zh		ʒ
 inoremap  <c-p>hv		ɦ
@@ -113,6 +115,7 @@ inoremap  <c-p>lz		ɮ
 inoremap  <c-p>vl		ʋ
 
 inoremap  <c-p>lr		ɭ
+inoremap  <c-p>ly		ʎ
 
 inoremap  <c-p>yy		ə
 inoremap  <c-p>ep		ɛ
