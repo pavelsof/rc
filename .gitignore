@@ -1,5 +1,7 @@
 development/*
+meta/*
+
 vimfiles/.netrwhist
 vimfiles/view
-session.vim
+
 *.swp
