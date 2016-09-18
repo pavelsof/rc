@@ -19,6 +19,7 @@ set foldmethod=indent  " automatic folding of indented blocks
 set foldnestmax=3  " maximum number of nested folds
 set gdefault  " substitution is done on all matches in a line
 set guicursor+=a:blinkon0  " Diaspar's central computer does not blink
+set guifont=monospace\ 11
 set guioptions+=a  " visual selection goes to clipboard
 set guioptions-=e  " better looking window tabs
 set guioptions-=L  " remove left-hand scroll
@@ -203,6 +204,7 @@ augroup END
 " .. python
 augroup filetype_python
 	autocmd!
+	autocmd FileType python setlocal noexpandtab softtabstop=0 tabstop=4  " counter ftplugin/python.vim
 	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 	" autocmd FileType python setlocal completeopt+=preview
 	autocmd FileType python nnoremap <buffer> <localleader>c mCI# <esc>`Cll
@@ -270,11 +272,4 @@ let g:scratch_no_mappings=1
 
 nmap  <leader>s		<plug>(scratch-insert-reuse)
 xmap  <leader>s		<plug>(scratch-selection-reuse)
-
-" .. jedi
-let g:jedi#rename_command=""  " no key binding for :call jedi#rename()
-let g:jedi#auto_vim_configuration=0  " do not change completeopt
-let g:jedi#use_tabs_not_buffers=1  " new tabs for gotos
-let g:jedi#completions_enabled=0  " disable jedi auto-completion
-let g:jedi#smart_auto_mappings=0  " do not auto-complete from x import y
 
