@@ -50,6 +50,7 @@ set tabstop=4
 set wildignore+=*/build/*  " because javascript
 set wildignore+=*/bower_components/*
 set wildignore+=*/node_modules/*
+set wildignore+=*/meta/*  " do not let ctrl-p go to the meta level
 set wildmenu  " enhanced auto-completion for the command line
 set writebackup  " create backup file while editing
 
@@ -251,6 +252,7 @@ Helptags  " re-generate plugins' docs
 nnoremap  <leader>a		:Ack 
 
 " .. gundo
+let g:gundo_prefer_python3=1  " problems with transition to 3
 let g:gundo_help=0  " disable help text
 nnoremap  <leader>u 	:GundoToggle<cr>
 
