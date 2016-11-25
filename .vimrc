@@ -47,10 +47,10 @@ set smarttab
 set splitbelow  " new :split is below current
 set splitright  " new :vsplit is to the right of the current
 set tabstop=4
+set wildignore+=*/meta/env/*  " because virtualenv
 set wildignore+=*/build/*  " because javascript
 set wildignore+=*/bower_components/*
 set wildignore+=*/node_modules/*
-set wildignore+=*/meta/*  " do not let ctrl-p go to the meta level
 set wildmenu  " enhanced auto-completion for the command line
 set writebackup  " create backup file while editing
 
@@ -250,6 +250,9 @@ Helptags  " re-generate plugins' docs
 
 " .. ack
 nnoremap  <leader>a		:Ack 
+
+" .. ctrlp
+let g:ctrlp_show_hidden = 1  " do not ignore .gitignore
 
 " .. gundo
 let g:gundo_prefer_python3=1  " problems with transition to 3
