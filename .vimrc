@@ -47,7 +47,8 @@ set smarttab
 set splitbelow  " new :split is below current
 set splitright  " new :vsplit is to the right of the current
 set tabstop=4
-set wildignore+=*/meta/env/*  " because virtualenv
+set wildignore+=*/development/env/*  " because virtualenv
+set wildignore+=*/meta/env/*
 set wildignore+=*/build/*  " because javascript
 set wildignore+=*/bower_components/*
 set wildignore+=*/node_modules/*
@@ -104,26 +105,34 @@ inoremap  <c-p>ng		ŋ
 inoremap  <c-p>rt		ɾ
 inoremap  <c-p>rr		ɽ
 
+inoremap  <c-p>fi		ɸ
 inoremap  <c-p>th		θ
 inoremap  <c-p>dh		ð
 inoremap  <c-p>sd		s̪
 inoremap  <c-p>zd		z̪
 inoremap  <c-p>sh		ʃ
 inoremap  <c-p>zh		ʒ
+inoremap  <c-p>ga		ɣ
 inoremap  <c-p>hv		ɦ
 
 inoremap  <c-p>lz		ɮ
 
 inoremap  <c-p>vl		ʋ
 
+inoremap  <c-p>lb		ɬ
 inoremap  <c-p>lr		ɭ
 inoremap  <c-p>ly		ʎ
 
+inoremap  <c-p>I		ɪ
+inoremap  <c-p>i-		ɨ
+inoremap  <c-p>up		ʊ
+inoremap  <c-p>o-		ɵ
 inoremap  <c-p>yy		ə
 inoremap  <c-p>ep		ɛ
 inoremap  <c-p>uv		ʌ
 inoremap  <c-p>oc		ɔ
 inoremap  <c-p>ae		æ
+inoremap  <c-p>ao		ɑ
 
 inoremap  <c-p>-:		ː
 inoremap  <c-p>-.		ˑ
