@@ -52,6 +52,7 @@ set wildignore+=*/meta/env/*
 set wildignore+=*/build/*  " because javascript
 set wildignore+=*/bower_components/*
 set wildignore+=*/node_modules/*
+set wildignore+=*.pyc
 set wildmenu  " enhanced auto-completion for the command line
 set writebackup  " create backup file while editing
 
@@ -95,6 +96,7 @@ inoremap  <c-p>td		t̪
 inoremap  <c-p>dd		d̪
 inoremap  <c-p>tr		ʈ
 inoremap  <c-p>dr		ɖ
+inoremap  <c-p>gg		ɡ
 inoremap  <c-p>gl		ʔ
 
 inoremap  <c-p>nd		n̪
@@ -164,17 +166,6 @@ augroup END
 augroup bufread_md
 	autocmd!
 	autocmd BufRead,BufNewFile *.md set filetype=markdown
-augroup END
-
-" .. remember folds and cursor position
-augroup bufwinenter_code
-	autocmd!
-	autocmd BufWinEnter *.css,*.js,*.less,*.php,*.py silent loadview
-augroup END
-
-augroup bufwinleave_code
-	autocmd!
-	autocmd BufWinLeave *.css,*.js,*.less,*.php,*.py mkview
 augroup END
 
 " .. css
@@ -266,6 +257,7 @@ let g:ctrlp_show_hidden = 1  " do not ignore .gitignore
 " .. gundo
 let g:gundo_prefer_python3=1  " problems with transition to 3
 let g:gundo_help=0  " disable help text
+
 nnoremap  <leader>u 	:GundoToggle<cr>
 
 " .. latex-box
@@ -286,4 +278,3 @@ let g:scratch_no_mappings=1
 
 nmap  <leader>s		<plug>(scratch-insert-reuse)
 xmap  <leader>s		<plug>(scratch-selection-reuse)
-

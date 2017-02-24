@@ -1,6 +1,8 @@
 # do not look into these
 --ignore-directory=bower_components
 --ignore-directory=build
+--ignore-directory=development/env
+--ignore-directory=meta/env
 --ignore-directory=.hypothesis
 
 # just like vim
