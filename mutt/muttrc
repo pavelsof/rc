@@ -1,0 +1,58 @@
+# 
+# common
+# 
+set assumed_charset = "utf-8"
+set edit_headers = yes  # give vim the headers as well
+set editor = "vim"
+set fast_reply = yes  # do not ask for to and subject when replying
+set header_cache = ~/.cache/mutt  # speed up, better if a dir
+set imap_check_subscribed = yes  # auto-populate all mailboxes
+set imap_passive = no  # login automatically
+set include = yes  # do not ask for including message when replying
+set mail_check = 60  # how often in seconds to look for mail
+set menu_scroll = yes  # scroll a line at a time
+set quit = ask-yes
+set resolve = no  # stay with the message after doing something on it
+set send_charset = "utf-8"
+set ssl_force_tls = yes  # enable and require encryption
+set ssl_starttls = yes
+set use_from = yes  # add the from header
+
+
+# 
+# index view
+# 
+set confirmappend = no  # do not ask when moving messages
+set date_format = "%d.%m.%y %H:%M"
+set index_format = "%Z    %D    %-24.24L    %s"
+set mark_old = no  # read/new is good enough for me, too
+set sort = threads  # primary sort
+set sort_aux = reverse-last-date-received  # secondary sort
+set strict_threads = yes  # do not rely on the subject header
+
+bind index  gg  first-entry
+bind index  G   last-entry
+bind index  N   search-opposite
+
+macro index a   "<save-message>=Archives<enter>"
+
+
+# 
+# pager view
+# 
+set markers = no  # do not show + at the start of wrapped lines
+set pager_stop = yes  # do not move to next mail when at the end
+set tilde = yes  # vim-like tildes for no lines
+
+bind pager  j   next-line
+bind pager  k   previous-line
+bind pager  gg  top
+bind pager  G   bottom
+bind pager  N   search-opposite
+bind pager  R   group-reply
+
+
+# 
+# local
+# 
+source ~/.mutt/muttrc_local
