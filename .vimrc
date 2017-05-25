@@ -96,6 +96,7 @@ inoremap  <c-p>td		t̪
 inoremap  <c-p>dd		d̪
 inoremap  <c-p>tr		ʈ
 inoremap  <c-p>dr		ɖ
+inoremap  <c-p>j-		ɟ
 inoremap  <c-p>gg		ɡ
 inoremap  <c-p>gl		ʔ
 
@@ -114,6 +115,8 @@ inoremap  <c-p>sd		s̪
 inoremap  <c-p>zd		z̪
 inoremap  <c-p>sh		ʃ
 inoremap  <c-p>zh		ʒ
+inoremap  <c-p>sr		ʂ
+inoremap  <c-p>zr		ʐ
 inoremap  <c-p>ga		ɣ
 inoremap  <c-p>hv		ɦ
 
@@ -135,14 +138,18 @@ inoremap  <c-p>uv		ʌ
 inoremap  <c-p>oc		ɔ
 inoremap  <c-p>ae		æ
 inoremap  <c-p>ao		ɑ
+inoremap  <c-p>oa		ɒ
 
-inoremap  <c-p>-:		ː
-inoremap  <c-p>-.		ˑ
-inoremap  <c-p>-'		ˈ
 inoremap  <c-p>-h		ʰ
+inoremap  <c-p>-w		ʷ
 inoremap  <c-p>-j		ʲ
 inoremap  <c-p>-n		ⁿ
-inoremap  <c-p>-w		ʷ
+
+inoremap  <c-p>-'		ˈ
+inoremap  <c-p>-:		ː
+inoremap  <c-p>-.		ˑ
+inoremap  <c-p>--		 ̆
+inoremap  <c-p>-_		 ͜
 
 
 " event hooks
@@ -215,7 +222,7 @@ augroup END
 " .. tsv
 augroup filetype_tsv
 	autocmd!
-	autocmd BufRead,BufNewFile *.tsv setlocal tabstop=24
+	autocmd BufRead,BufNewFile *.tsv setlocal tabstop=16
 augroup END
 
 
