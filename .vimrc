@@ -128,6 +128,9 @@ inoremap  <c-p>lb		ɬ
 inoremap  <c-p>lr		ɭ
 inoremap  <c-p>ly		ʎ
 
+inoremap  <c-p>-)		 ͡
+inoremap  <c-p>-(		 ͜
+
 inoremap  <c-p>I		ɪ
 inoremap  <c-p>i-		ɨ
 inoremap  <c-p>up		ʊ
@@ -141,6 +144,7 @@ inoremap  <c-p>ao		ɑ
 inoremap  <c-p>oa		ɒ
 
 inoremap  <c-p>-h		ʰ
+inoremap  <c-p>-d		 ̯
 inoremap  <c-p>-w		ʷ
 inoremap  <c-p>-j		ʲ
 inoremap  <c-p>-n		ⁿ
@@ -149,7 +153,6 @@ inoremap  <c-p>-'		ˈ
 inoremap  <c-p>-:		ː
 inoremap  <c-p>-.		ˑ
 inoremap  <c-p>--		 ̆
-inoremap  <c-p>-_		 ͜
 
 
 " event hooks
