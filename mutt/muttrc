@@ -48,6 +48,8 @@ bind pager  j   next-line
 bind pager  k   previous-line
 bind pager  gg  top
 bind pager  G   bottom
+bind pager  d   half-down
+bind pager  u   half-up
 bind pager  N   search-opposite
 bind pager  R   group-reply
 
