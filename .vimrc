@@ -74,11 +74,6 @@ inoremap  <c-tab> 		<esc>:tabnext<cr>i
 inoremap  <c-s-tab> 	<esc>:tabprevious<cr>i
 inoremap  <c-t> 		<esc>:tabnew<cr>
 
-" .. prevent vim from removing tab-only lines
-inoremap  <cr>			<cr>42<bs><bs>
-nnoremap  o				o42<bs><bs>
-nnoremap  O				O42<bs><bs>
-
 " .. no habit should die!
 inoremap  <c-s>			<esc>:w<cr>
 nnoremap  <c-s>			:w<cr>
@@ -147,6 +142,7 @@ inoremap  <c-p>-h		ʰ
 inoremap  <c-p>-d		 ̯
 inoremap  <c-p>-w		ʷ
 inoremap  <c-p>-j		ʲ
+inoremap  <c-p>-~		 ̃
 inoremap  <c-p>-n		ⁿ
 
 inoremap  <c-p>-'		ˈ
@@ -171,6 +167,11 @@ endif
 augroup bufread_less
 	autocmd!
 	autocmd BufRead,BufNewFile *.less set filetype=css
+augroup END
+
+augroup bufread_mako
+	autocmd!
+	autocmd BufRead,BufNewFile *.mako set filetype=html
 augroup END
 
 augroup bufread_md
@@ -215,7 +216,7 @@ augroup END
 " .. python
 augroup filetype_python
 	autocmd!
-	autocmd FileType python setlocal noexpandtab softtabstop=0 tabstop=4  " counter ftplugin/python.vim
+	autocmd FileType python call DisablePEP8()  " counter ftplugin/python.vim
 	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 	" autocmd FileType python setlocal completeopt+=preview
 	autocmd FileType python nnoremap <buffer> <localleader>c mCI# <esc>`Cll
@@ -250,6 +251,20 @@ function! DeleteView()
 	let path = &viewdir.'/'.path
 	call delete(path)
 	echom "Deleted: ".path
+endfunction
+
+" .. better (albeit not PEP8-compliant) indentation for python: tabs
+function! DisablePEP8()
+	setlocal noexpandtab
+	setlocal softtabstop=0
+	setlocal tabstop=4
+endfunction
+
+" .. reverts to the values suggested in ftplugin/python.vim
+function! EnablePEP8()
+	setlocal expandtab
+	setlocal softtabstop=4
+	setlocal tabstop=8
 endfunction
 
 
