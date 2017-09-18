@@ -29,9 +29,6 @@
 [submodule "vimfiles/bundle/vim-characterize"]
 	path = vim/vim/bundle/vim-characterize
 	url = https://github.com/tpope/vim-characterize
-[submodule "misc/gnome-terminal-colors-solarized"]
-	path = misc/gnome-terminal-colors-solarized
-	url = https://github.com/Anthony25/gnome-terminal-colors-solarized
 [submodule "vimfiles/bundle/vim-surround"]
 	path = vim/vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
