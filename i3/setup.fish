@@ -8,4 +8,6 @@ begin
 	end
 
 	ln -sv $i3_dir/config $HOME/.config/i3/config
+
+	touch $HOME/.config/i3/post-config.sh
 end
