@@ -38,3 +38,6 @@
 [submodule "vimfiles/bundle/editorconfig-vim"]
 	path = vim/vim/bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "vim/vim/bundle/vim-pathogen"]
+	path = vim/vim/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen

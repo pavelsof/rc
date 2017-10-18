@@ -270,6 +270,7 @@ endfunction
 
 " plugins
 " .. pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 Helptags  " re-generate plugins' docs
 
