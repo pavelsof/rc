@@ -217,8 +217,7 @@ augroup END
 augroup filetype_python
 	autocmd!
 	autocmd FileType python call DisablePEP8()  " counter ftplugin/python.vim
-	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-	" autocmd FileType python setlocal completeopt+=preview
+	autocmd FileType python setlocal omnifunc=jedi#completions  " because g:jedi#completions_enabled=0
 	autocmd FileType python nnoremap <buffer> <localleader>c mCI# <esc>`Cll
 	autocmd FileType python nnoremap <buffer> <localleader>C g_F#xx
 augroup END
@@ -286,13 +285,35 @@ let g:gundo_help=0  " disable help text
 
 nnoremap  <leader>u 	:GundoToggle<cr>
 
+" .. jedi
+let g:jedi#auto_vim_configuration=0  " do not overwrite completeopt
+let g:jedi#show_call_signatures=0  " do not show the args of completed func
+let g:jedi#completions_enabled=0  " neocomplete handles that
+let g:jedi#use_splits_not_buffers='winwidth'  " open defs in new splits
+let g:jedi#force_py_version=3  " use python3
+let g:jedi#smart_auto_mappings=0  " do not auto-complete import statements
+
 " .. latex-box
 let g:LatexBox_Folding=1  " enable folding
 let g:LatexBox_latexmk_options="-xelatex"
 
 " .. neocomplete (former neocomplcache)
-let g:neocomplete#enable_at_startup=1  " start it
-let g:neocomplete#enable_ignore_case=0  " case-sensitive
+if has('lua')
+	let g:neocomplete#enable_at_startup=1  " start it
+	let g:neocomplete#enable_ignore_case=0  " case-sensitive
+	let g:neocomplete#enable_fuzzy_completion=0  " and exact
+	let g:neocomplete#max_list=20  " max number of suggestions
+
+	if !exists('g:neocomplete#force_omni_input_patterns')
+		let g:neocomplete#force_omni_input_patterns = {}
+	endif
+	let g:neocomplete#force_omni_input_patterns.python =
+	\ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+else
+	if has('python3') || has('python')
+		let g:jedi#completions_enabled=1
+	endif
+endif
 
 " .. scratch
 let g:scratch_autohide=1
