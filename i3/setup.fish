@@ -1,7 +1,7 @@
 #!/usr/bin/fish
 
 begin
-	set -l i3_dir (dirname (status -f))
+	set -l i3_dir (realpath (dirname (status -f)))
 
 	if not test -d $HOME/.config/i3
 		mkdir -pv $HOME/.config/i3
