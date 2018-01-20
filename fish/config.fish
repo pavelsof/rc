@@ -1,4 +1,3 @@
-
 # disable error highlighting
 set fish_color_error $fish_color_normal
 
@@ -8,8 +7,7 @@ function fish_user_key_bindings
 	bind \e\[4~ end-of-line
 end
 
-# fix gvim on ubuntu bug: see ~/.bashrc
+# fix gvim on ubuntu bug
 function gvim
 	command gvim ^ /dev/null $argv
 end
-
