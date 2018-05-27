@@ -14,6 +14,7 @@ set menu_scroll = yes  # scroll a line at a time
 set quit = ask-yes
 set resolve = no  # stay with the message after doing something on it
 set send_charset = "utf-8"
+set sleep_time = 0  # no delay when switching folders
 set ssl_force_tls = yes  # enable and require encryption
 set ssl_starttls = yes
 set use_from = yes  # add the from header
@@ -34,7 +35,7 @@ bind index  gg  first-entry
 bind index  G   last-entry
 bind index  N   search-opposite
 
-macro index a   "<save-message>=Archives<enter>"
+macro index c   "<change-folder>?<change-dir><home>^K=<enter>"
 
 
 # 

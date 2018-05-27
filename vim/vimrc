@@ -307,8 +307,12 @@ if has('lua')
 	if !exists('g:neocomplete#force_omni_input_patterns')
 		let g:neocomplete#force_omni_input_patterns = {}
 	endif
+
 	let g:neocomplete#force_omni_input_patterns.python =
 	\ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+
+	let g:neocomplete#force_omni_input_patterns.tex =
+	\ '\v\\\a*(ref|cite)\a*([^]]*\])?\{(|[^}]*,)'
 else
 	if has('python3') || has('python')
 		let g:jedi#completions_enabled=1
