@@ -47,12 +47,6 @@ set smarttab
 set splitbelow  " new :split is below current
 set splitright  " new :vsplit is to the right of the current
 set tabstop=4
-set wildignore+=*/development/env/*  " because virtualenv
-set wildignore+=*/meta/env/*
-set wildignore+=*/build/*  " because javascript
-set wildignore+=*/bower_components/*
-set wildignore+=*/node_modules/*
-set wildignore+=*.pyc
 set wildmenu  " enhanced auto-completion for the command line
 set writebackup  " create backup file while editing
 
@@ -277,7 +271,10 @@ Helptags  " re-generate plugins' docs
 nnoremap  <leader>a		:Ack 
 
 " .. ctrlp
-let g:ctrlp_show_hidden = 1  " do not ignore .gitignore
+let g:ctrlp_by_filename = 0  " <c-d> off by default
+let g:ctrlp_regexp = 0  " <c-r> off by default
+let g:ctrlp_switch_buffer = ''  " always open a new buffer
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
 
 " .. gundo
 let g:gundo_prefer_python3=1  " problems with transition to 3
