@@ -276,6 +276,9 @@ let g:ctrlp_regexp = 0  " <c-r> off by default
 let g:ctrlp_switch_buffer = ''  " always open a new buffer
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
 
+" .. editorconfig
+let g:EditorConfig_disable_rules = ['max_line_length']
+
 " .. gundo
 let g:gundo_prefer_python3=1  " problems with transition to 3
 let g:gundo_help=0  " disable help text
