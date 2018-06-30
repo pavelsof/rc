@@ -1,0 +1,7 @@
+! xterm: not colours
+xterm.vt100.cursorBlink: false
+xterm.vt100.faceName: mono:size=11:antialias=true
+xterm.vt100.renderFont: true
+xterm.vt100.saveLines: 4096
+xterm.vt100.scrollBar: false
+xterm.vt100.selectToClipboard: true
