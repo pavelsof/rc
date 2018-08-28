@@ -44,3 +44,6 @@
 [submodule "vim/vim/bundle/jedi-vim"]
 	path = vim/vim/bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim
+[submodule "vim/vim/bundle/goyo.vim"]
+	path = vim/vim/bundle/goyo.vim
+	url = https://github.com/junegunn/goyo.vim

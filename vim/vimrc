@@ -279,6 +279,9 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-stand
 " .. editorconfig
 let g:EditorConfig_max_line_indicator = "exceeding"
 
+" .. goyo
+nnoremap  <leader>q		:Goyo<cr>
+
 " .. gundo
 let g:gundo_prefer_python3=1  " problems with transition to 3
 let g:gundo_help=0  " disable help text
