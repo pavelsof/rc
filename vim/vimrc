@@ -332,3 +332,6 @@ let g:scratch_no_mappings=1
 
 nmap  <leader>s		<plug>(scratch-insert-reuse)
 xmap  <leader>s		<plug>(scratch-selection-reuse)
+
+" .. vimwiki
+let g:vimwiki_list = [{'path': '~/docs/vimwiki/'}]
