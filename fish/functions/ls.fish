@@ -1,5 +1,4 @@
-# same as fish' default ls, with added --group-directories-first
-function ls
+function ls --description "ls that shows the directories first"
 	set -l params --color=auto --group-directories-first
 
 	if isatty 1
