@@ -1,3 +1,18 @@
+# locale
+set -gx LANG C.UTF-8
+set -gx LC_ADDRESS C.UTF-8
+set -gx LC_COLLATE C.UTF-8
+set -gx LC_CTYPE C.UTF-8
+set -gx LC_IDENTIFICATION C.UTF-8
+set -gx LC_MONETARY C.UTF-8
+set -gx LC_MESSAGES C.UTF-8
+set -gx LC_MEASUREMENT C.UTF-8
+set -gx LC_NAME C.UTF-8
+set -gx LC_NUMERIC C.UTF-8
+set -gx LC_PAPER C.UTF-8
+set -gx LC_TELEPHONE C.UTF-8
+set -gx LC_TIME C.UTF-8
+
 # disable error highlighting
 set fish_color_error $fish_color_normal
 
