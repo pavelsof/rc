@@ -1,11 +1,12 @@
 " various
-colorscheme obsidian2  " the theme
+colorscheme solarized  " the theme
 filetype plugin indent on  " enable file type detection
 syntax enable
 
 " settings
 set autoindent  " follow indentation of last line
 set autoread  " auto-detect file changes
+set background=light
 set backspace=2
 set clipboard+=unnamed  " use the normal clipboard
 set completeopt=menuone  " autocompletion popup menu

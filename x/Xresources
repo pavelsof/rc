@@ -1,2 +1,2 @@
-#include ".Xresources.d/dark"
+#include ".Xresources.d/light"
 #include ".Xresources.d/xterm"
