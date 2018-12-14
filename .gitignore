@@ -1,6 +1,7 @@
 /meta/
 
 /vim/vim/.netrwhist
+/vim/vim/plugged/
 /vim/vim/spell/
 /vim/vim/view/
 
