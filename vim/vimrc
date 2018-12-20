@@ -274,15 +274,15 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'sjl/gundo.vim'
 Plug 'derekmcloughlin/gvimfullscreen_win32'
-Plug 'davidhalter/jedi-vim'
-Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
 Plug 'gregsexton/MatchTag'
 Plug 'Shougo/neocomplete.vim'
 Plug 'mtth/scratch.vim'
-Plug 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'tpope/vim-characterize'
-Plug 'tpope/vim-fireplace'
-Plug 'dag/vim-fish'
+Plug 'tpope/vim-fireplace', {'for': 'clojure'}
+Plug 'dag/vim-fish', {'for': 'fish'}
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
 
