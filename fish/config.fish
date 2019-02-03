@@ -26,3 +26,9 @@ end
 function gvim
 	command gvim ^ /dev/null $argv
 end
+
+# source config_local.fish if available
+set -l config_local (dirname (status -f))/config_local.fish
+if test -f $config_local
+	source $config_local
+end
