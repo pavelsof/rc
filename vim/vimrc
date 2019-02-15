@@ -213,7 +213,6 @@ augroup END
 " .. python
 augroup filetype_python
 	autocmd!
-	autocmd FileType python call DisablePEP8()  " counter ftplugin/python.vim
 	autocmd FileType python setlocal omnifunc=jedi#completions  " because g:jedi#completions_enabled=0
 	autocmd FileType python nnoremap <buffer> <localleader>c mCI# <esc>`Cll
 	autocmd FileType python nnoremap <buffer> <localleader>C g_F#xx
