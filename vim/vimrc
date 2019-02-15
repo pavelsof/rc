@@ -207,7 +207,7 @@ augroup filetype_markdown
 	autocmd!
 	autocmd FileType markdown setlocal formatoptions+=c  " auto-wrap comments
 	autocmd FileType markdown setlocal formatoptions+=t  " and non-comments
-	autocmd FileType markdown setlocal textwidth=80  " to be <= 80 chars wide
+	autocmd FileType markdown setlocal textwidth=79  " to be <= 79 chars wide
 augroup END
 
 " .. python
@@ -300,6 +300,8 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-stand
 let g:EditorConfig_max_line_indicator = "exceeding"
 
 " .. goyo
+let g:goyo_width=83
+
 nnoremap  <leader>q		:Goyo<cr>
 
 " .. gundo
