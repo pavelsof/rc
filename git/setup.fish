@@ -1,7 +1,5 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
-begin
-	set -l git_dir (realpath (dirname (status -f)))
+set -l git_dir (realpath (dirname (status -f)))
 
-	ln -sv $git_dir/gitconfig $HOME/.gitconfig
-end
+ln -sv $git_dir/gitconfig $HOME/.gitconfig

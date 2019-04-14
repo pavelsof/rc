@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 set -l vim_dir (realpath (dirname (status -f)))
 
