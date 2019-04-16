@@ -31,11 +31,11 @@ set helplang=  " inglés por favor
 set hlsearch  " highlight search matches
 set ignorecase  " search is case-insensitive
 set incsearch  " highlight search matches while typing
+set linebreak  " break at words instead of chars when wrap is on
 set nobackup  " do not hold backups after the file is written to
 set nobomb  " without BOM
 set nocindent  " cindent does not behave well with js
 set noerrorbells visualbell t_vb=
-set nowrap  " better for vsplit
 set number
 set omnifunc=syntaxcomplete#Complete  " native auto-completion
 set ruler
@@ -49,6 +49,7 @@ set splitbelow  " new :split is below current
 set splitright  " new :vsplit is to the right of the current
 set tabstop=4
 set wildmenu  " enhanced auto-completion for the command line
+set wrap  " do not overflow horizontally
 set writebackup  " create backup file while editing
 
 " .. conditional settings
