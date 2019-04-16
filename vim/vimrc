@@ -283,6 +283,8 @@ Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'dag/vim-fish', {'for': 'fish'}
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
 
