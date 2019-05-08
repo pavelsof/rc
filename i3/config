@@ -118,12 +118,8 @@ workspace_layout tabbed
 bindsym $mod+s split v
 bindsym $mod+v split h
 
-# toggle container layout: stacking/tabbed/splith/splitv
-bindsym $mod+t layout toggle all
-
-# for when i3 gets updated:
 # toggle container layout: all but stacking
-# bindsym $mod+t layout toggle tabbed splith splitv
+bindsym $mod+t layout toggle tabbed splith splitv
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -147,7 +143,8 @@ bindsym $mod+p exec dmenu_run
 bindsym $mod+a exec dmenu_run
 
 # lock screen
-bindsym $mod+e exec "slock"
+# does not get to sleep without sleeping
+bindsym $mod+e exec "sleep 0.2; slock"
 
 
 #
@@ -202,4 +199,4 @@ bindsym $mod+Shift+r restart
 # post-config hook
 #
 
-exec --no-startup-id "bash ~/.config/i3/post-config.sh"
+exec_always --no-startup-id "bash ~/.config/i3/post-config.sh"
