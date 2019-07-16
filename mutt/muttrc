@@ -58,4 +58,4 @@ bind pager  R   group-reply
 # 
 # local
 # 
-source ~/.mutt/muttrc_local
+source ~/.config/mutt/muttrc_local
