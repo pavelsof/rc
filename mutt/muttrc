@@ -1,7 +1,8 @@
-# 
+#
 # common
-# 
+#
 set assumed_charset = "utf-8"
+set auto_tag = yes  # apply actions to all tagged messages without ;
 set edit_headers = yes  # give vim the headers as well
 set editor = "vim"
 set fast_reply = yes  # do not ask for to and subject when replying
@@ -20,9 +21,9 @@ set ssl_starttls = yes
 set use_from = yes  # add the from header
 
 
-# 
+#
 # index view
-# 
+#
 set confirmappend = no  # do not ask when moving messages
 set date_format = "%d.%m.%y %H:%M"
 set index_format = "%Z    %D    %-24.24L    %s"
@@ -38,9 +39,9 @@ bind index  N   search-opposite
 macro index c   "<change-folder>?<change-dir><home>^K=<enter>"
 
 
-# 
+#
 # pager view
-# 
+#
 set markers = no  # do not show + at the start of wrapped lines
 set pager_stop = yes  # do not move to next mail when at the end
 set tilde = yes  # vim-like tildes for no lines
@@ -55,7 +56,47 @@ bind pager  N   search-opposite
 bind pager  R   group-reply
 
 
-# 
+#
+# colours: solarized (light mode)
+#
+# optional emphasised content   base 01    color10 (brightgreen)
+# primary content               base 00    color11 (brightyellow)
+# secondary content             base 1     color14 (brightcyan)
+# background highlights         base 2     color7 (white)
+# background                    base 3     color15 (brightwhite, default)
+#
+#                               yellow     color3 (yellow)
+#                               orange     color9 (brightred)
+#                               red        color1 (red)
+#                               magenta    color5 (magenta)
+#                               violet     color13 (brightmagenta)
+#                               blue       color4 (blue)
+#                               cyan       color6 (cyan)
+#                               green      color2 (green)
+#
+# but despite the theory black on white looks quite nice
+#
+color attachment brightcyan default  # below the headers, above the body
+color error brightred default  # e.g. "Top of message is shown."
+color hdrdefault brightmagenta default  # the headers
+color indicator black yellow  # the line to select an entry
+color markers brightred default  # irrelevant when markers = no
+color message brightmagenta default  # e.g. "Mailbox is unchanged."
+color normal brightyellow default  # the default
+color prompt brightmagenta default  # e.g. "Search for:"
+color quoted brightcyan default  # the lines starting with > in the body
+color search white black  # when searching in the email body
+color signature brightcyan default
+color status brightyellow white  # the first and penultimate lines
+color tilde brightmagenta default  # when the email does not fill the screen
+color tree brightyellow default  # e.g. in the view attachments screen
+
+color index brightblack default "~N"  # new
+color index brightred default "~D"  # deleted
+color index brightmagenta default "~T"  # tagged
+
+
+#
 # local
-# 
+#
 source ~/.config/mutt/muttrc_local
