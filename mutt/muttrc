@@ -2,7 +2,7 @@
 # common
 #
 set assumed_charset = "utf-8"
-set auto_tag = yes  # apply actions to all tagged messages without ;
+set autoedit = yes  # open vim directly when starting a new message
 set edit_headers = yes  # give vim the headers as well
 set editor = "vim"
 set fast_reply = yes  # do not ask for to and subject when replying
@@ -24,8 +24,10 @@ set use_from = yes  # add the from header
 #
 # index view
 #
+set auto_tag = yes  # apply actions to all tagged messages without ;
 set confirmappend = no  # do not ask when moving messages
 set date_format = "%d.%m.%y %H:%M"
+set delete = yes  # do not ask when deleting messages
 set index_format = "%Z    %D    %-24.24L    %s"
 set mark_old = no  # read/new is good enough for me, too
 set sort = threads  # primary sort
@@ -36,7 +38,11 @@ bind index  gg  first-entry
 bind index  G   last-entry
 bind index  N   search-opposite
 
-macro index c   "<change-folder>?<change-dir><home>^K=<enter>"
+macro index  e   "<save-message>=Archive<enter>"
+macro index  gi  "<change-folder>=INBOX<enter>"
+macro index  ga  "<change-folder>=Archive<enter>"
+macro index  gt  "<change-folder>=Sent<enter>"
+macro index  gd  "<change-folder>=Drafts<enter>"
 
 
 #
@@ -99,4 +105,4 @@ color index brightmagenta default "~T"  # tagged
 #
 # local
 #
-source ~/.config/mutt/muttrc_local
+source ~/.config/mutt/local
