@@ -162,11 +162,6 @@ if has('gui_running')
 endif
 
 " .. recognise certain file extensions
-augroup bufread_less
-	autocmd!
-	autocmd BufRead,BufNewFile *.less set filetype=css
-augroup END
-
 augroup bufread_mako
 	autocmd!
 	autocmd BufRead,BufNewFile *.mako set filetype=html
