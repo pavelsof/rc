@@ -260,6 +260,7 @@ Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
 Plug 'gregsexton/MatchTag'
 Plug 'Shougo/neocomplete.vim'
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'mtth/scratch.vim'
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'tpope/vim-characterize'
@@ -341,4 +342,4 @@ nmap  <leader>s		<plug>(scratch-insert-reuse)
 xmap  <leader>s		<plug>(scratch-selection-reuse)
 
 " .. vimwiki
-let g:vimwiki_list = [{'path': '~/docs/vimwiki/'}]
+let g:vimwiki_list = [{'path': '~/documents/vimwiki/'}]
