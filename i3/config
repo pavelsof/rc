@@ -1,3 +1,5 @@
+# i3 config file (v4)
+
 #
 # vars
 #
@@ -5,7 +7,7 @@
 set $mod Mod4
 
 
-# 
+#
 # brightness
 #
 
@@ -26,7 +28,7 @@ bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +5%"
 # screenshots
 #
 
-bindsym Print exec "scrot 'scrot_%H:%M:%S.png' -e 'mv $f -t ~/portal/pics/'"
+bindsym Print exec "scrot 'scrot_%H:%M:%S.png' -e 'mv $f -t ~/playground/'"
 
 
 #
@@ -176,7 +178,9 @@ bindsym $mod+r mode "resize"
 # start i3bar
 bar {
 	status_command i3status
-	tray_output primary
+
+	# programs cannot place icons in the bar
+	tray_output none
 
 	# by default scrolling switches workspaces
 	bindsym button4 nop
