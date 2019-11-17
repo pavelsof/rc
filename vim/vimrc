@@ -167,11 +167,6 @@ augroup bufread_mako
 	autocmd BufRead,BufNewFile *.mako set filetype=html
 augroup END
 
-augroup bufread_md
-	autocmd!
-	autocmd BufRead,BufNewFile *.md set filetype=markdown
-augroup END
-
 " .. css
 augroup filetype_css
 	autocmd!
@@ -196,14 +191,6 @@ augroup filetype_java
 	autocmd FileType java setlocal foldmethod=marker
 	autocmd FileType java setlocal foldmarker={,}
 	autocmd FileType java setlocal foldtext=GetCleanFoldText()
-augroup END
-
-" .. markdown
-augroup filetype_markdown
-	autocmd!
-	autocmd FileType markdown setlocal formatoptions+=c  " auto-wrap comments
-	autocmd FileType markdown setlocal formatoptions+=t  " and non-comments
-	autocmd FileType markdown setlocal textwidth=79  " to be <= 79 chars wide
 augroup END
 
 " .. python
