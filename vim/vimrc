@@ -274,7 +274,11 @@ Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " .. ack
-nnoremap  <leader>a		:Ack 
+if executable('ag')
+	let g:ackprg = "ag --vimgrep"  " ag, in fact
+endif
+
+nnoremap  <leader>a		:Ack! 
 
 " .. ctrlp
 let g:ctrlp_by_filename = 0  " <c-d> off by default
