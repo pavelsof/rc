@@ -260,6 +260,7 @@ Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
 Plug 'gregsexton/MatchTag'
 Plug 'Shougo/neocomplete.vim'
+Plug 'chr4/nginx.vim', {'for': 'nginx'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'mtth/scratch.vim'
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
