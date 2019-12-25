@@ -257,28 +257,29 @@ endfunction
 " .. vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'mileszs/ack.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/goyo.vim'
-Plug 'sjl/gundo.vim'
 Plug 'derekmcloughlin/gvimfullscreen_win32'
-Plug 'davidhalter/jedi-vim', {'for': 'python'}
-Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
+Plug 'editorconfig/editorconfig-vim'
 Plug 'gregsexton/MatchTag'
-Plug 'Shougo/neocomplete.vim'
-Plug 'chr4/nginx.vim', {'for': 'nginx'}
-Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'junegunn/goyo.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'mileszs/ack.vim'
 Plug 'mtth/scratch.vim'
-Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
+Plug 'Shougo/neocomplete.vim'
+Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-characterize'
-Plug 'tpope/vim-fireplace', {'for': 'clojure'}
-Plug 'dag/vim-fish', {'for': 'fish'}
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
+
+Plug 'chr4/nginx.vim', {'for': 'nginx'}
+Plug 'dag/vim-fish', {'for': 'fish'}
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
+Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 
 call plug#end()
 
