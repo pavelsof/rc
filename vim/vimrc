@@ -201,6 +201,13 @@ augroup filetype_python
 	autocmd FileType python nnoremap <buffer> <localleader>C g_F#xx
 augroup END
 
+" .. rust
+augroup filetype_rust
+	autocmd!
+	autocmd FileType rust nmap <localleader>d <Plug>(rust-def-split)
+	autocmd FileType rust nmap K <Plug>(rust-doc)
+augroup END
+
 " .. tsv
 augroup filetype_tsv
 	autocmd!
@@ -271,6 +278,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
+Plug 'racer-rust/vim-racer', {'for': 'rust'}
 
 call plug#end()
 
@@ -334,6 +342,10 @@ else
 		let g:jedi#completions_enabled=1
 	endif
 endif
+
+" .. racer
+let g:racer_experimental_completer = 1
+let g:racer_insert_paren = 0
 
 " .. scratch
 let g:scratch_autohide=1
