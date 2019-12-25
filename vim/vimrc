@@ -311,12 +311,13 @@ let g:gundo_help=0  " disable help text
 nnoremap  <leader>u 	:GundoToggle<cr>
 
 " .. jedi
-let g:jedi#auto_vim_configuration=0  " do not overwrite completeopt
-let g:jedi#show_call_signatures=0  " do not show the args of completed func
-let g:jedi#completions_enabled=0  " neocomplete handles that
-let g:jedi#use_splits_not_buffers='winwidth'  " open defs in new splits
-let g:jedi#force_py_version=3  " use python3
-let g:jedi#smart_auto_mappings=0  " do not auto-complete import statements
+let g:jedi#auto_vim_configuration = 0  " do not overwrite completeopt
+let g:jedi#show_call_signatures = 0  " do not show the args of completed func
+let g:jedi#completions_enabled = 0  " neocomplete handles that
+let g:jedi#use_splits_not_buffers = 'winwidth'  " open defs in new splits
+let g:jedi#force_py_version = 3  " use python3
+let g:jedi#smart_auto_mappings = 0  " do not auto-complete import statements
+let g:jedi#goto_stubs_command = ""  " do not shadow scratch's mapping
 
 " .. latex-box
 let g:LatexBox_Folding=1  " enable folding
