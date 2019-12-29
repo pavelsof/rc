@@ -1,2 +1,5 @@
 " hells bells
 set noerrorbells visualbell t_vb=
+
+" the theme
+colorscheme solarized
