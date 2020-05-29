@@ -1,11 +1,7 @@
-[user]
-	email = mail@pavelsof.com
-	name = pavelsof
 [color]
 	ui = true
 [core]
 	editor = vim
-[push]
-	default = matching
-[ui]
-	color = false
+[user]
+	email = mail@pavelsof.com
+	name = pavelsof
