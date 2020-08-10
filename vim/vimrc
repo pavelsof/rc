@@ -270,6 +270,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
 
+Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'chr4/nginx.vim', {'for': 'nginx'}
 Plug 'dag/vim-fish', {'for': 'fish'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
