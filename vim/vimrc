@@ -274,6 +274,7 @@ Plug 'cespare/vim-toml', {'for': 'toml'}
 Plug 'chr4/nginx.vim', {'for': 'nginx'}
 Plug 'dag/vim-fish', {'for': 'fish'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
 Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
