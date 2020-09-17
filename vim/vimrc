@@ -194,7 +194,7 @@ augroup END
 " .. python
 augroup filetype_python
 	autocmd!
-	autocmd FileType python setlocal omnifunc=jedi#completions  " because g:jedi#completions_enabled=0
+	" autocmd FileType python setlocal omnifunc=jedi#completions  " because g:jedi#completions_enabled=0
 	autocmd FileType python nnoremap <buffer> <localleader>c mCI# <esc>`Cll
 	autocmd FileType python nnoremap <buffer> <localleader>C g_F#xx
 augroup END
@@ -260,9 +260,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'gregsexton/MatchTag'
 Plug 'junegunn/goyo.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'maralla/completor.vim'
 Plug 'mileszs/ack.vim'
 Plug 'mtth/scratch.vim'
-Plug 'Shougo/neocomplete.vim'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-repeat'
@@ -279,6 +279,7 @@ Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'slashmili/alchemist.vim', {'for': 'elixir'}
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 
 call plug#end()
@@ -289,6 +290,9 @@ if executable('ag')
 endif
 
 nnoremap  <leader>a		:Ack! 
+
+" .. completor
+let g:completor_python_binary = '/usr/bin/python3'
 
 " .. ctrlp
 let g:ctrlp_by_filename = 0  " <c-d> off by default
@@ -312,8 +316,8 @@ nnoremap  <leader>u 	:GundoToggle<cr>
 
 " .. jedi
 let g:jedi#auto_vim_configuration = 0  " do not overwrite completeopt
-let g:jedi#show_call_signatures = 0  " do not show the args of completed func
-let g:jedi#completions_enabled = 0  " neocomplete handles that
+let g:jedi#show_call_signatures = 1  " do not show the args of completed func
+let g:jedi#completions_enabled = 1  " completor handles that
 let g:jedi#use_splits_not_buffers = 'winwidth'  " open defs in new splits
 let g:jedi#force_py_version = 3  " use python3
 let g:jedi#smart_auto_mappings = 0  " do not auto-complete import statements
@@ -322,28 +326,6 @@ let g:jedi#goto_stubs_command = ""  " do not shadow scratch's mapping
 " .. latex-box
 let g:LatexBox_Folding=1  " enable folding
 let g:LatexBox_latexmk_options="-xelatex"
-
-" .. neocomplete (former neocomplcache)
-if has('lua')
-	let g:neocomplete#enable_at_startup=1  " start it
-	let g:neocomplete#enable_ignore_case=0  " case-sensitive
-	let g:neocomplete#enable_fuzzy_completion=0  " and exact
-	let g:neocomplete#max_list=20  " max number of suggestions
-
-	if !exists('g:neocomplete#force_omni_input_patterns')
-		let g:neocomplete#force_omni_input_patterns = {}
-	endif
-
-	let g:neocomplete#force_omni_input_patterns.python =
-	\ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-
-	let g:neocomplete#force_omni_input_patterns.tex =
-	\ '\v\\\a*(ref|cite)\a*([^]]*\])?\{(|[^}]*,)'
-else
-	if has('python3') || has('python')
-		let g:jedi#completions_enabled=1
-	endif
-endif
 
 " .. racer
 let g:racer_experimental_completer = 1
