@@ -1,2 +1,2 @@
-#include ".Xresources.d/light"
+#include ".Xresources.d/solarized_light"
 #include ".Xresources.d/xterm"
