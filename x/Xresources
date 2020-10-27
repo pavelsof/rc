@@ -1,2 +1,2 @@
-#include ".Xresources.d/nord"
+#include ".Xresources.d/gruvbox_light"
 #include ".Xresources.d/xterm"
