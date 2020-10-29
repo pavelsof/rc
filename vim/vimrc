@@ -278,6 +278,7 @@ Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
 Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'slashmili/alchemist.vim', {'for': 'elixir'}
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
