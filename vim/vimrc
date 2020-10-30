@@ -344,4 +344,5 @@ nmap  <leader>s		<plug>(scratch-insert-reuse)
 xmap  <leader>s		<plug>(scratch-selection-reuse)
 
 " .. vimwiki
+let g:vimwiki_ext2syntax = {}
 let g:vimwiki_list = [{'path': '~/documents/vimwiki/'}]
