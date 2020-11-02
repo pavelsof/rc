@@ -1,11 +1,25 @@
 #!/usr/bin/env fish
 
-set -l i3_dir (realpath (dirname (status -f)))
+set repo_dir (realpath (dirname (status -f)))
+set config_dir $HOME/.config/i3
 
-if not test -d $HOME/.config/i3
-	mkdir -pv $HOME/.config/i3
+if test -d $config_dir
+	echo $config_dir → already exists
+else
+	mkdir -p $config_dir
+	echo $config_dir → created
 end
 
-ln -sv $i3_dir/config $HOME/.config/i3/config
+if test -e $config_dir/config
+	echo $config_dir/config → already exists
+else
+	ln -s $repo_dir/config $config_dir/config
+	echo $config_dir/config → symlinked
+end
 
-touch $HOME/.config/i3/post-config.sh
+if test -e $config_dir/post-config.sh
+	echo $config_dir/post-config.sh → already exists
+else
+	cp $repo_dir/post-config.sh -t $config_dir
+	echo $config_dir/post-config.sh → created
+end
