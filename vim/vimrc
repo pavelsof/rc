@@ -46,6 +46,7 @@ set smarttab
 set splitbelow  " new :split is below current
 set splitright  " new :vsplit is to the right of the current
 set tabstop=4
+set termguicolors
 set wildmenu  " enhanced auto-completion for the command line
 set wrap  " do not overflow horizontally
 set writebackup  " create backup file while editing
@@ -255,6 +256,8 @@ endfunction
 " .. vim-plug
 call plug#begin('~/.vim/plugged')
 
+Plug 'morhetz/gruvbox'
+
 Plug 'derekmcloughlin/gvimfullscreen_win32'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'gregsexton/MatchTag'
@@ -284,6 +287,9 @@ Plug 'slashmili/alchemist.vim', {'for': 'elixir'}
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 
 call plug#end()
+
+" .. theme
+colorscheme gruvbox
 
 " .. ack
 if executable('ag')

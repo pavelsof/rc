@@ -2,4 +2,4 @@
 set noerrorbells visualbell t_vb=
 
 " the theme
-colorscheme solarized
+colorscheme gruvbox
