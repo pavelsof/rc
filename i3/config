@@ -135,7 +135,7 @@ bindsym $mod+Shift+space floating toggle
 #
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
