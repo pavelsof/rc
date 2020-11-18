@@ -213,6 +213,12 @@ augroup filetype_tsv
 	autocmd BufRead,BufNewFile *.tsv setlocal tabstop=16
 augroup END
 
+" .. typescriptreact
+augroup filetype_typescriptreact
+	autocmd!
+	autocmd BufRead,BufNewFile *.tsx set filetype=typescript
+augroup END
+
 
 " functions
 " .. defines the folded line content
@@ -279,7 +285,6 @@ Plug 'dag/vim-fish', {'for': 'fish'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
 Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
-Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
