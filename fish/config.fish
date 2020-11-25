@@ -13,6 +13,9 @@ set -gx LC_PAPER C.UTF-8
 set -gx LC_TELEPHONE C.UTF-8
 set -gx LC_TIME C.UTF-8
 
+# also works for sudoedit
+set -gx EDITOR vim
+
 # disable error highlighting
 set fish_color_error $fish_color_normal
 
