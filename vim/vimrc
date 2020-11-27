@@ -309,6 +309,10 @@ endif
 
 nnoremap  <leader>a		:Ack! 
 
+" .. alchemist
+let g:alchemist_tag_map = '<localleader>d'
+let g:alchemist_tag_stack_map = '<localleader>t'
+
 " .. completor
 let g:completor_python_binary = '/usr/bin/python3'
 
