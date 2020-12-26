@@ -11,8 +11,13 @@ set $mod Mod4
 # brightness
 #
 
-bindsym XF86MonBrightnessDown exec "light -U 5"
-bindsym XF86MonBrightnessUp exec "light -A 5"
+# using xbacklight
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 5 -steps 1 -time 100"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 5 -steps 1 -time 100"
+
+# using github.com/haikarainen/light
+# bindsym XF86MonBrightnessDown exec "light -U 5"
+# bindsym XF86MonBrightnessUp exec "light -A 5"
 
 
 #
