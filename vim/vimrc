@@ -308,15 +308,20 @@ endif
 nnoremap  <leader>a		:Ack! 
 
 " .. alchemist
-let g:alchemist_tag_map = '<localleader>d'
-let g:alchemist_tag_stack_map = '<localleader>t'
+let g:alchemist_tag_disable = 1
+
+augroup alchemist
+	autocmd!
+	autocmd FileType elixir nnoremap <buffer> K          :call alchemist#exdoc()<CR>
+	autocmd FileType elixir nnoremap <buffer> <leader>d  :call alchemist#exdef()<CR>
+augroup END
 
 " .. completor
 let g:completor_python_binary = '/usr/bin/python3'
 
-nnoremap  K            :call completor#do('doc')<CR>
-nnoremap  <leader>d	   :call completor#do('definition')<CR>
-nnoremap  <leader>f    :call completor#do('format')<CR>
+nnoremap K          :call completor#do('doc')<CR>
+nnoremap <leader>d  :call completor#do('definition')<CR>
+nnoremap <leader>f  :call completor#do('format')<CR>
 
 " .. ctrlp
 let g:ctrlp_by_filename = 0  " <c-d> off by default
