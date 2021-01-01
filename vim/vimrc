@@ -18,6 +18,7 @@ set foldmethod=indent  " automatic folding of indented blocks
 set foldnestmax=3  " maximum number of nested folds
 set gdefault  " substitution is done on all matches in a line
 set guicursor+=a:blinkon0  " Diaspar's central computer does not blink
+set guiheadroom=0  " do not resize gvim after :source
 set guifont=monospace\ 11
 set guioptions+=a  " visual selection goes to clipboard
 set guioptions-=e  " better looking window tabs
