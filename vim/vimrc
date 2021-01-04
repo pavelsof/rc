@@ -84,9 +84,9 @@ nnoremap  <c-s>			:w<cr>
 nnoremap  <leader><space>	:noh<cr>
 
 " .. spells
-nnoremap  <leader>bg	:setlocal spell! spelllang=bg<cr>
-nnoremap  <leader>de	:setlocal spell! spelllang=de<cr>
-nnoremap  <leader>en	:setlocal spell! spelllang=en_gb<cr>
+nnoremap  <leader>lb  :setlocal spell! spelllang=bg<cr>
+nnoremap  <leader>ld  :setlocal spell! spelllang=de<cr>
+nnoremap  <leader>le  :setlocal spell! spelllang=en_gb<cr>
 
 " .. IPA
 inoremap  <c-p>			<nop>
