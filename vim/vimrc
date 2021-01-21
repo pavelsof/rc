@@ -181,14 +181,12 @@ augroup END
 augroup filetype_css
 	autocmd!
 	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-	autocmd FileType css nnoremap <buffer> <localleader>c mCI/* <esc>A */<esc>`Clll
 augroup END
 
 " .. javascript
 augroup filetype_javascript
 	autocmd!
 	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-	autocmd FileType javascript nnoremap <buffer> <localleader>c mCI// <esc>`Clll
 	autocmd FileType javascript setlocal foldmethod=marker
 	autocmd FileType javascript setlocal foldmarker={,}
 	autocmd FileType javascript setlocal foldtext=GetCleanFoldText()
@@ -197,17 +195,9 @@ augroup END
 " .. java
 augroup filetype_java
 	autocmd!
-	autocmd FileType java nnoremap <buffer> <localleader>c mCI// <esc>`Clll
 	autocmd FileType java setlocal foldmethod=marker
 	autocmd FileType java setlocal foldmarker={,}
 	autocmd FileType java setlocal foldtext=GetCleanFoldText()
-augroup END
-
-" .. python
-augroup filetype_python
-	autocmd!
-	autocmd FileType python nnoremap <buffer> <localleader>c mCI# <esc>`Cll
-	autocmd FileType python nnoremap <buffer> <localleader>C g_F#xx
 augroup END
 
 " .. rust
@@ -284,6 +274,7 @@ Plug 'mileszs/ack.vim'
 Plug 'mtth/scratch.vim'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
@@ -326,6 +317,10 @@ augroup alchemist
 	autocmd FileType elixir nnoremap <buffer> K          :call alchemist#exdoc()<CR>
 	autocmd FileType elixir nnoremap <buffer> <leader>d  :call alchemist#exdef()<CR>
 augroup END
+
+" .. commentary
+nmap  <leader>c    <plug>CommentaryLine
+vmap  <leader>c    <plug>Commentary
 
 " .. completor
 let g:completor_python_binary = '/usr/bin/python3'
