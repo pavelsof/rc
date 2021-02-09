@@ -35,6 +35,12 @@ set -gx EDITOR vim
 # add ~/bin to the PATH
 set -gx PATH $PATH ~/bin
 
+# on ubuntu: SSH_AUTH_SOCK would be already set
+# on arch: complements ~/.config/systemd/user/ssh-agent.service
+if not set -q SSH_AUTH_SOCK
+	set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.sock
+end
+
 
 #
 # theme fixes
