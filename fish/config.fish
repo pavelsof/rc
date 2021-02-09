@@ -32,6 +32,9 @@ set -gx LC_TIME $my_locale
 # also works for sudoedit
 set -gx EDITOR vim
 
+# add ~/bin to the PATH
+set -gx PATH $PATH ~/bin
+
 
 #
 # theme fixes
