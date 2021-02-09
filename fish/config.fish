@@ -66,8 +66,13 @@ if not test -z (uname -a | grep -i ubuntu)
 	end
 
 	# fix the gvim issue
-	function gvim
+	function gvim -w gvim
 		command gvim ^ /dev/null $argv
+	end
+
+	# cal on ubuntu does not start the week with monday
+	function cal -w ncal
+		ncal -b -M $argv
 	end
 
 end
