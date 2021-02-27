@@ -52,7 +52,15 @@ set wildmenu  " enhanced auto-completion for the command line
 set wrap  " do not overflow horizontally
 set writebackup  " create backup file while editing
 
-" .. conditional settings
+" conditional settings
+" .. the env var would be set by darken
+if $THEME ==? 'dark'
+	set background=dark
+else
+	set background=light
+end
+
+" .. long ago in a distant land…
 if has('win32') || has('win32unix')
 	set guifont=Consolas:h11
 endif
@@ -63,7 +71,7 @@ if &term =~# '^screen' || &term =~# '^tmux'
 	let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 endif
 
-" .. global variables
+" global variables
 let g:netrw_liststyle=3  " good tree
 
 
