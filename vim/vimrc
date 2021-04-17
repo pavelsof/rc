@@ -194,7 +194,6 @@ augroup END
 " .. javascript
 augroup filetype_javascript
 	autocmd!
-	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 	autocmd FileType javascript setlocal foldmethod=marker
 	autocmd FileType javascript setlocal foldmarker={,}
 	autocmd FileType javascript setlocal foldtext=GetCleanFoldText()
@@ -277,7 +276,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'gregsexton/MatchTag'
 Plug 'junegunn/goyo.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'maralla/completor.vim'
+Plug 'maralla/completor.vim', {'do': 'make js'}
 Plug 'mileszs/ack.vim'
 Plug 'mtth/scratch.vim'
 Plug 'sjl/gundo.vim'
@@ -298,6 +297,7 @@ Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'slashmili/alchemist.vim', {'for': 'elixir'}
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 
 call plug#end()
