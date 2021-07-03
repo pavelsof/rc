@@ -293,6 +293,8 @@ Plug 'chr4/nginx.vim', {'for': 'nginx'}
 Plug 'dag/vim-fish', {'for': 'fish'}
 Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
 Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
+Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
+Plug 'maralla/completor-typescript', {'for': 'typescript'}
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
@@ -332,6 +334,7 @@ vmap  <leader>c    <plug>Commentary
 
 " .. completor
 let g:completor_python_binary = '/usr/bin/python3'
+let g:completor_tsserver_binary = 'node_modules/.bin/tsserver'
 
 nnoremap K          :call completor#do('doc')<CR>
 nnoremap <leader>d  :call completor#do('definition')<CR>
