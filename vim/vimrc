@@ -364,6 +364,9 @@ nnoremap  <leader>u 	:GundoToggle<cr>
 let g:LatexBox_Folding=1  " enable folding
 let g:LatexBox_latexmk_options="-xelatex"
 
+" .. markdown
+let g:markdown_fenced_languages = ['js=javascript', 'python', 'sh']
+
 " .. racer
 let g:racer_experimental_completer = 1
 let g:racer_insert_paren = 0
