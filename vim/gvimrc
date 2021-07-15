@@ -1,5 +1,8 @@
 " hells bells
 set noerrorbells visualbell t_vb=
 
+" do not resize gvim after :source
+set guiheadroom=0
+
 " the theme
 colorscheme gruvbox
