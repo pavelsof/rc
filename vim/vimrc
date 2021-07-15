@@ -60,11 +60,6 @@ else
 	set background=light
 end
 
-" .. long ago in a distant land…
-if has('win32') || has('win32unix')
-	set guifont=Consolas:h11
-endif
-
 " .. fix termguicolors in tmux
 if &term =~# '^screen' || &term =~# '^tmux'
 	let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
@@ -170,13 +165,7 @@ nnoremap  <leader>vs    :source $MYVIMRC<cr>
 " event hooks
 " .. start with a maximised window
 if has('gui_running')
-	if has('win32') || has('win32unix')
-		" autocmd GUIEnter * simalt ~x
-		" gvimfullscreen_win32
-		autocmd GUIEnter * call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)
-	else
-		autocmd GUIEnter * silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
-	endif
+	autocmd GUIEnter * silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
 endif
 
 " .. css
@@ -236,7 +225,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
 
-Plug 'derekmcloughlin/gvimfullscreen_win32'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'gregsexton/MatchTag'
 Plug 'junegunn/goyo.vim'
