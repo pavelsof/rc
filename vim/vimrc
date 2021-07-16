@@ -77,7 +77,11 @@ if &term =~# '^screen' || &term =~# '^tmux'
 	let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 endif
 
-let g:netrw_liststyle=3  " good tree
+" enable syntax highlighting for markdown code blocks
+let g:markdown_fenced_languages = ['js=javascript', 'python', 'sh']
+
+" netrw directory listing
+let g:netrw_liststyle = 3
 
 
 "
@@ -240,45 +244,78 @@ endfunction
 
 call plug#begin('~/.vim/plugged')
 
+" theme and ui
 Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
 
-Plug 'editorconfig/editorconfig-vim'
-Plug 'gregsexton/MatchTag'
-Plug 'junegunn/goyo.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'maralla/completor.vim', {'do': 'make js'}
-Plug 'mileszs/ack.vim'
-Plug 'mtth/scratch.vim'
-Plug 'sjl/gundo.vim'
+" should be built-in
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
+Plug 'gregsexton/MatchTag'
+
+" going places
+Plug 'kien/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+
+" drawers and extras
+Plug 'sjl/gundo.vim'
+Plug 'mtth/scratch.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 
-Plug 'cespare/vim-toml', {'for': 'toml'}
-Plug 'chr4/nginx.vim', {'for': 'nginx'}
-Plug 'dag/vim-fish', {'for': 'fish'}
+" development
+Plug 'editorconfig/editorconfig-vim'
+Plug 'maralla/completor.vim', {'do': 'make js'}
+
+" elixir
 Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
-Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
+Plug 'slashmili/alchemist.vim', {'for': 'elixir'}
+
+" javascript
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'maralla/completor-typescript', {'for': 'typescript'}
+
+" other file types
+Plug 'dag/vim-fish', {'for': 'fish'}
+Plug 'chr4/nginx.vim', {'for': 'nginx'}
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-Plug 'slashmili/alchemist.vim', {'for': 'elixir'}
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
+Plug 'cespare/vim-toml', {'for': 'toml'}
 
 call plug#end()
 
 
-" theme
+" theme and ui
 
+" .. gruvbox
 colorscheme gruvbox
 
+" .. airline
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
-" ack
 
+" should be built-in
+
+" .. commentary
+nmap  <leader>c    <plug>CommentaryLine
+vmap  <leader>c    <plug>Commentary
+
+
+" going places
+
+" .. ctrlp
+let g:ctrlp_by_filename = 0  " <c-d> off by default
+let g:ctrlp_regexp = 0  " <c-r> off by default
+let g:ctrlp_switch_buffer = ''  " always open a new buffer
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
+
+" .. ack
 if executable('ag')
 	let g:ackprg = "ag --vimgrep"  " ag, in fact
 endif
@@ -286,81 +323,15 @@ endif
 nnoremap  <leader>a		:Ack! 
 
 
-" airline
+" drawers and extras
 
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-
-
-" alchemist
-
-let g:alchemist_tag_disable = 1
-
-augroup alchemist
-	autocmd!
-	autocmd FileType elixir nnoremap <buffer> K          :call alchemist#exdoc()<CR>
-	autocmd FileType elixir nnoremap <buffer> <leader>d  :call alchemist#exdef()<CR>
-augroup END
-
-
-" commentary
-
-nmap  <leader>c    <plug>CommentaryLine
-vmap  <leader>c    <plug>Commentary
-
-
-" completor
-
-let g:completor_python_binary = '/usr/bin/python3'
-let g:completor_tsserver_binary = 'node_modules/.bin/tsserver'
-
-nnoremap K          :call completor#do('doc')<CR>
-nnoremap <leader>d  :call completor#do('definition')<CR>
-nnoremap <leader>f  :call completor#do('format')<CR>
-
-
-" ctrlp
-
-let g:ctrlp_by_filename = 0  " <c-d> off by default
-let g:ctrlp_regexp = 0  " <c-r> off by default
-let g:ctrlp_switch_buffer = ''  " always open a new buffer
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
-
-
-" editorconfig
-
-let g:EditorConfig_max_line_indicator = "exceeding"
-
-
-" goyo
-
-let g:goyo_width=83
-
-nnoremap  <leader>q		:Goyo<cr>
-
-
-" gundo
-
+" .. gundo
 let g:gundo_prefer_python3=1  " problems with transition to 3
 let g:gundo_help=0  " disable help text
 
 nnoremap  <leader>u 	:GundoToggle<cr>
 
-
-" latex-box
-
-let g:LatexBox_Folding=1  " enable folding
-let g:LatexBox_latexmk_options="-xelatex"
-
-
-" markdown
-
-let g:markdown_fenced_languages = ['js=javascript', 'python', 'sh']
-
-
-" scratch
-
+" .. scratch
 let g:scratch_autohide=1
 let g:scratch_insert_autohide=0
 let g:scratch_height=10
@@ -371,8 +342,43 @@ let g:scratch_no_mappings=1
 nmap  <leader>s		<plug>(scratch-insert-reuse)
 xmap  <leader>s		<plug>(scratch-selection-reuse)
 
+" .. goyo
+let g:goyo_width=83
 
-" vimwiki
+nnoremap  <leader>q		:Goyo<cr>
 
+" .. vimwiki
 let g:vimwiki_ext2syntax = {}
 let g:vimwiki_list = [{'path': '~/documents/vimwiki/'}]
+
+
+" development
+
+" .. editorconfig
+let g:EditorConfig_max_line_indicator = "exceeding"
+
+" .. completor
+let g:completor_python_binary = '/usr/bin/python3'
+let g:completor_tsserver_binary = 'node_modules/.bin/tsserver'
+
+nnoremap K          :call completor#do('doc')<CR>
+nnoremap <leader>d  :call completor#do('definition')<CR>
+nnoremap <leader>f  :call completor#do('format')<CR>
+
+
+" elixir
+
+let g:alchemist_tag_disable = 1
+
+augroup alchemist
+	autocmd!
+	autocmd FileType elixir nnoremap <buffer> K          :call alchemist#exdoc()<CR>
+	autocmd FileType elixir nnoremap <buffer> <leader>d  :call alchemist#exdef()<CR>
+augroup END
+
+
+" other file types
+
+" .. latex
+let g:LatexBox_Folding=1  " enable folding
+let g:LatexBox_latexmk_options="-xelatex"
