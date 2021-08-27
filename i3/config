@@ -40,7 +40,7 @@ bindsym Print exec "scrot 'scrot_%H:%M:%S.png' -e 'mv $f -t ~/playground/'"
 # theme
 #
 
-font pango:monospace 8
+font pango:Fira Code SemiBold 10
 
 # background colour
 exec --no-startup-id "xsetroot -solid '#28b7c1'"
