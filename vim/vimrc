@@ -281,11 +281,13 @@ Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
 Plug 'slashmili/alchemist.vim', {'for': 'elixir'}
 
 " javascript
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 Plug 'maralla/completor-typescript', {'for': 'typescript'}
 
 " other file types
+Plug 'dart-lang/dart-vim-plugin', {'for': 'dart'}
 Plug 'dag/vim-fish', {'for': 'fish'}
 Plug 'chr4/nginx.vim', {'for': 'nginx'}
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
@@ -384,6 +386,10 @@ augroup END
 
 
 " other file types
+
+" .. dart
+let g:dart_style_guide = 2
+let g:dart_format_on_save = 1
 
 " .. latex
 let g:LatexBox_Folding=1  " enable folding
