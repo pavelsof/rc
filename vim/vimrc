@@ -261,6 +261,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'gregsexton/MatchTag'
+Plug 'AndrewRadev/tagalong.vim'
 
 " going places
 Plug 'kien/ctrlp.vim'
