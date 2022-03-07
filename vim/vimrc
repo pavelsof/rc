@@ -211,6 +211,11 @@ augroup filetype_typescriptreact
 	autocmd BufRead,BufNewFile *.tsx set filetype=typescript
 augroup END
 
+augroup filetype_yaml
+	autocmd!
+	autocmd FileType yaml setlocal shiftwidth=2
+augroup END
+
 " start with a maximised window
 if has('gui_running')
 	autocmd GUIEnter * silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
