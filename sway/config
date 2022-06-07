@@ -26,6 +26,13 @@ input type:touchpad {
 
 
 #
+# displays
+#
+
+include ~/.config/sway/outputs
+
+
+#
 # brightness
 #
 
