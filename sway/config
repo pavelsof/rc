@@ -60,7 +60,7 @@ bindsym XF86AudioRaiseVolume exec "amixer sset Master 5%+"
 # screenshots
 #
 
-bindsym Print exec "scrot 'scrot_%H:%M:%S.png' -e 'mv $f -t ~/playground/'"
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
 
 
 #
