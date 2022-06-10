@@ -69,9 +69,6 @@ bindsym Print exec grim -g "$(slurp)" - | wl-copy
 
 font pango:Fira Code SemiBold 10
 
-# background colour
-# exec --no-startup-id "xsetroot -solid '#28b7c1'"
-
 
 #
 # workspaces
@@ -207,7 +204,7 @@ bindsym $mod+r mode "resize"
 # other modules
 #
 
-# start i3bar
+# i3bar
 bar {
 	status_command i3status
 
@@ -218,6 +215,9 @@ bar {
 	bindsym button4 nop
 	bindsym button5 nop
 }
+
+# desktop notifications
+exec dunst
 
 
 #
