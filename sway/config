@@ -160,25 +160,6 @@ bindsym $mod+Shift+space floating toggle
 
 
 #
-# programs
-#
-
-# start a terminal
-bindsym $mod+Return exec kitty
-
-# kill focused window
-bindsym $mod+q kill
-
-# start dmenu (a program launcher)
-bindsym $mod+p exec dmenu_run
-bindsym $mod+a exec dmenu_run
-
-# lock screen
-# does not get to sleep without sleeping
-bindsym $mod+e exec "sleep 0.2; slock"
-
-
-#
 # resize mode
 #
 
@@ -198,6 +179,24 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+
+#
+# programs
+#
+
+# start a terminal
+bindsym $mod+Return exec kitty
+
+# kill focused window
+bindsym $mod+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+p exec dmenu_run
+bindsym $mod+a exec dmenu_run
+
+# lock screen
+bindsym $mod+e exec swaylock -c 000000
 
 
 #
