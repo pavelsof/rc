@@ -268,7 +268,7 @@ Plug 'tpope/vim-surround'
 Plug 'gregsexton/MatchTag'
 Plug 'AndrewRadev/tagalong.vim'
 
-" going places
+" jumping and searching
 Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 
@@ -278,19 +278,17 @@ Plug 'mtth/scratch.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'vimwiki/vimwiki'
 
-" development
+" coding
 Plug 'editorconfig/editorconfig-vim'
-Plug 'maralla/completor.vim', {'do': 'make js'}
+Plug 'maralla/completor.vim'
 
 " elixir
 Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
 Plug 'slashmili/alchemist.vim', {'for': 'elixir'}
 
 " javascript
-Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
-Plug 'maralla/completor-typescript', {'for': 'typescript'}
 
 " other file types
 Plug 'dart-lang/dart-vim-plugin', {'for': 'dart'}
@@ -373,7 +371,10 @@ let g:EditorConfig_max_line_indicator = "exceeding"
 
 " .. completor
 let g:completor_python_binary = '/usr/bin/python3'
-let g:completor_tsserver_binary = 'node_modules/.bin/tsserver'
+
+let g:completor_filetype_map = {}
+let g:completor_filetype_map.javascript = {'ft': 'lsp', 'cmd': 'typescript-language-server --stdio'}
+let g:completor_filetype_map.typescript = {'ft': 'lsp', 'cmd': 'typescript-language-server --stdio'}
 
 nnoremap K          :call completor#do('doc')<CR>
 nnoremap <leader>d  :call completor#do('definition')<CR>
