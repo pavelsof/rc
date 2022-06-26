@@ -206,11 +206,6 @@ augroup filetype_tsv
 	autocmd BufRead,BufNewFile *.tsv setlocal tabstop=16
 augroup END
 
-augroup filetype_typescriptreact
-	autocmd!
-	autocmd BufRead,BufNewFile *.tsx set filetype=typescript
-augroup END
-
 augroup filetype_yaml
 	autocmd!
 	autocmd FileType yaml setlocal shiftwidth=2
@@ -373,8 +368,15 @@ let g:EditorConfig_max_line_indicator = "exceeding"
 let g:completor_python_binary = '/usr/bin/python3'
 
 let g:completor_filetype_map = {}
-let g:completor_filetype_map.javascript = {'ft': 'lsp', 'cmd': 'typescript-language-server --stdio'}
-let g:completor_filetype_map.typescript = {'ft': 'lsp', 'cmd': 'typescript-language-server --stdio'}
+" let g:completor_filetype_map.elixir = {'ft': 'lsp', 'cmd': 'elixir-ls'}
+" let g:completor_filetype_map.python = {'ft': 'lsp', 'cmd': 'pylsp'}
+
+if executable('typescript-language-server')
+	let g:completor_filetype_map.javascript = {'ft': 'lsp', 'cmd': 'typescript-language-server --stdio'}
+	let g:completor_filetype_map.javascriptreact = {'ft': 'lsp', 'cmd': 'typescript-language-server --stdio'}
+	let g:completor_filetype_map.typescript = {'ft': 'lsp', 'cmd': 'typescript-language-server --stdio'}
+	let g:completor_filetype_map.typescriptreact = {'ft': 'lsp', 'cmd': 'typescript-language-server --stdio'}
+endif
 
 nnoremap K          :call completor#do('doc')<CR>
 nnoremap <leader>d  :call completor#do('definition')<CR>
