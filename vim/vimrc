@@ -358,7 +358,7 @@ nnoremap  <leader>q		:Goyo<cr>
 
 " .. vimwiki
 let g:vimwiki_ext2syntax = {}
-let g:vimwiki_list = [{'path': '~/documents/vimwiki/'}]
+let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
 
 
 " development
