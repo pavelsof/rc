@@ -265,8 +265,9 @@ Plug 'gregsexton/MatchTag'
 Plug 'AndrewRadev/tagalong.vim'
 
 " jumping and searching
-Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 " drawers and extras
 Plug 'sjl/gundo.vim'
@@ -318,18 +319,15 @@ vmap  <leader>c    <plug>Commentary
 
 " going places
 
-" .. ctrlp
-let g:ctrlp_by_filename = 0  " <c-d> off by default
-let g:ctrlp_regexp = 0  " <c-r> off by default
-let g:ctrlp_switch_buffer = ''  " always open a new buffer
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
-
 " .. ack
 if executable('ag')
 	let g:ackprg = "ag --vimgrep"  " ag, in fact
 endif
 
 nnoremap  <leader>a		:Ack! 
+
+" .. fzf.vim
+nnoremap  <c-p>			:Files<cr>
 
 
 " drawers and extras
