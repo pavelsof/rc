@@ -23,6 +23,6 @@ end
 if test -e $config_dir/outputs
 	echo $config_dir/outputs → already exists
 else
-	touch $config_dir/outputs
-	echo $config_dir/outputs → touched
+	cp $repo_dir/outputs $config_dir/outputs
+	echo $config_dir/outputs → template copied
 end

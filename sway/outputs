@@ -1,0 +1,5 @@
+output DP-42 {
+	mode 1920x1080@60Hz
+}
+
+output "*" bg /home/pavelsof/path/to/wallpaper.jpg fit
