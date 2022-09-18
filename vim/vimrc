@@ -328,7 +328,10 @@ endif
 nnoremap  <leader>a		:Ack! 
 
 " .. fzf.vim
-nnoremap  <c-p>			:Files<cr>
+
+" :Files lists all non-hidden files in the repo
+" :GFiles uses git ls-files as source
+nnoremap  <c-p>			:GFiles<cr>
 
 
 " drawers and extras
