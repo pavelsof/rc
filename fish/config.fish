@@ -3,7 +3,7 @@
 #
 
 set -l my_locale (
-	if not test -z (locale -a | grep C.UTF-8)
+	if test (locale -a | grep C.UTF-8)
 		echo C.UTF-8
 	else
 		echo en_DK.UTF-8
@@ -64,10 +64,19 @@ end
 
 
 #
-# ubuntu-specific
+# distro-specific
 #
 
-if not test -z (uname -a | grep -i ubuntu)
+if test (uname -a | grep arch)
+
+	# fix cal to start the week with the day of the moon
+	function cal -w cal
+		command cal -m $argv
+	end
+
+end
+
+if test (uname -a | grep Ubuntu)
 
 	# make HOME and END work in fish
 	function fish_user_key_bindings
@@ -80,7 +89,7 @@ if not test -z (uname -a | grep -i ubuntu)
 		command gvim ^ /dev/null $argv
 	end
 
-	# cal on ubuntu does not start the week with monday
+	# fix cal to start the week with the day of the moon
 	function cal -w ncal
 		ncal -b -M $argv
 	end
