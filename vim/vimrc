@@ -330,8 +330,8 @@ nnoremap  <leader>a		:Ack!
 " .. fzf.vim
 
 " :Files lists all non-hidden files in the repo
-" :GFiles uses git ls-files as source
-nnoremap  <c-p>			:GFiles<cr>
+" :GFiles uses git ls-files as source — with the args passed on
+nnoremap  <c-p>			:GFiles --exclude-standard --cached --others<cr>
 
 
 " drawers and extras
