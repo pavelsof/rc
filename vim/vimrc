@@ -134,6 +134,7 @@ inoremap  <c-p>rt		ɾ
 inoremap  <c-p>rr		ɽ
 
 inoremap  <c-p>fi		ɸ
+inoremap  <c-p>be		β
 inoremap  <c-p>th		θ
 inoremap  <c-p>dh		ð
 inoremap  <c-p>sd		s̪
