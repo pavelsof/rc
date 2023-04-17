@@ -291,7 +291,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 
 " other file types
-Plug 'dart-lang/dart-vim-plugin', {'for': 'dart'}
+Plug 'dart-lang/dart-vim-plugin'  " lazy loading only works after one open
 Plug 'dag/vim-fish', {'for': 'fish'}
 Plug 'fladson/vim-kitty', {'for': 'kitty'}
 Plug 'chr4/nginx.vim', {'for': 'nginx'}
