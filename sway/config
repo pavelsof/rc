@@ -36,8 +36,8 @@ include ~/.config/sway/outputs
 # brightness
 #
 
-bindsym XF86MonBrightnessDown exec "brightnessctl set 1%-"
-bindsym XF86MonBrightnessUp exec "brightnessctl set 1%+"
+bindsym XF86MonBrightnessDown exec "brightnessctl set 2%-"
+bindsym XF86MonBrightnessUp exec "brightnessctl set 2%+"
 
 
 #
@@ -52,8 +52,8 @@ exec wl-gammarelay
 #
 
 bindsym XF86AudioMute exec "amixer sset Master toggle"
-bindsym XF86AudioLowerVolume exec "amixer sset Master 5%-"
-bindsym XF86AudioRaiseVolume exec "amixer sset Master 5%+"
+bindsym XF86AudioLowerVolume exec "amixer sset Master 2%-"
+bindsym XF86AudioRaiseVolume exec "amixer sset Master 2%+"
 
 
 #
