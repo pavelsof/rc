@@ -44,7 +44,7 @@ bindsym XF86MonBrightnessUp exec "brightnessctl set 2%+"
 # redden the screen
 #
 
-exec wl-gammarelay
+exec_always wl-gammarelay
 
 
 #
@@ -216,7 +216,7 @@ bar {
 }
 
 # desktop notifications
-exec dunst
+exec_always dunst
 
 
 #
