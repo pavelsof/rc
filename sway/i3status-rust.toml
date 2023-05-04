@@ -1,0 +1,50 @@
+icons_format = "{icon}"
+
+[theme]
+theme = "gruvbox-dark"
+
+[icons]
+icons = "awesome6"
+
+[[block]]
+block = "net"
+format = " $icon $signal_strength  $ssid  $ip "
+format_alt = " $icon $signal_strength  ^icon_net_down $speed_down.eng(prefix:K)  ^icon_net_up $speed_up.eng(prefix:K) "
+
+[[block]]
+block = "backlight"
+format = " $icon $brightness "
+step_width = 2
+cycle = [5, 10, 20, 50, 100]
+
+[[block]]
+block = "hueshift"
+format = "$temperature K "
+
+[[block]]
+block = "sound"
+step_width = 2
+
+[[block]]
+block = "memory"
+format = " $icon $mem_total_used_percents.eng(w:2) "
+format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
+
+[[block]]
+block = "cpu"
+format = " $icon $utilization "
+format_alt = " $icon $utilization $frequency{ $boost|} "
+
+[[block]]
+block = "temperature"
+format = " $icon $average "
+format_alt = " $icon $average avg, $min min, $max max "
+
+[[block]]
+block = "battery"
+format = " $icon $percentage "
+
+[[block]]
+block = "time"
+interval = 1
+format = " $timestamp.datetime(f:'%e %b') $icon $timestamp.datetime(f:'%H:%M') "
