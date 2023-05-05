@@ -69,6 +69,13 @@ bindsym Print exec grim -g "$(slurp)" - | wl-copy
 
 font pango:Fira Code SemiBold 10
 
+# gruvbox dark
+#                         border   bground  text     indic    child border
+client.focused            #076678  #076678  #fbf1c7  #076678  #282828
+client.focused_inactive   #504945  #504945  #fbf1c7  #504945  #282828
+client.focused_tab_title  #458588  #458588  #fbf1c7
+client.unfocused          #282828  #282828  #ebdbb2  #282828  #282828
+
 
 #
 # workspaces
@@ -203,7 +210,7 @@ bindsym $mod+e exec swaylock -c 000000
 # other modules
 #
 
-# i3bar
+# man sway-bar
 bar {
 	status_command i3status-rs ~/.config/sway/i3status-rust.toml
 
@@ -213,6 +220,16 @@ bar {
 	# by default scrolling switches workspaces
 	bindsym button4 nop
 	bindsym button5 nop
+
+	# gruvbox dark
+	colors {
+		background #282828
+
+		#                   border   bground  text
+		focused_workspace   #076678  #076678  #fbf1c7
+		inactive_workspace  #282828  #282828  #ebdbb2
+		urgent_workspace    #d79921  #d79921  #ebdbb2
+	}
 }
 
 # desktop notifications

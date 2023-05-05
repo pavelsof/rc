@@ -14,7 +14,7 @@ format_alt = " $icon $signal_strength  ^icon_net_down $speed_down.eng(prefix:K) 
 [[block]]
 block = "backlight"
 format = " $icon $brightness "
-step_width = 2
+step_width = 1
 cycle = [5, 10, 20, 50, 100]
 
 [[block]]
@@ -23,7 +23,7 @@ format = "$temperature K "
 
 [[block]]
 block = "sound"
-step_width = 2
+step_width = 1
 
 [[block]]
 block = "memory"
