@@ -212,6 +212,7 @@ bindsym $mod+e exec swaylock -c 000000
 
 # man sway-bar
 bar {
+	# man i3status-rs
 	status_command i3status-rs ~/.config/sway/i3status-rust.toml
 
 	# programs cannot place icons in the bar
@@ -220,6 +221,9 @@ bar {
 	# by default scrolling switches workspaces
 	bindsym button4 nop
 	bindsym button5 nop
+
+	# fc-list | grep -i awesome
+	font pango:Fira Code SemiBold, Font Awesome 6 Free 10
 
 	# gruvbox dark
 	colors {
