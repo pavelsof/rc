@@ -14,7 +14,7 @@ set autoindent  " follow indentation of last line
 set autoread  " auto-detect file changes
 set backspace=2
 set clipboard+=unnamed  " use the normal clipboard
-set completeopt=menuone,noselect,preview  " autocompletion popup menu
+set completeopt=menuone,preview,popup  " autocompletion popup menu
 set equalalways
 set encoding=utf-8
 set fileencoding=utf-8
@@ -42,7 +42,6 @@ set nobomb  " without BOM
 set nocindent  " cindent does not behave well with js
 set noerrorbells visualbell t_vb=
 set number
-set omnifunc=syntaxcomplete#Complete  " native auto-completion
 set ruler
 set shell=/bin/bash  " prevent fish from taking over
 set shiftround  " < and > go for multiples of shiftwidth
@@ -285,11 +284,10 @@ Plug 'vimwiki/vimwiki'
 
 " coding
 Plug 'editorconfig/editorconfig-vim'
-Plug 'maralla/completor.vim'
+Plug 'natebosch/vim-lsc'
 
 " elixir
 Plug 'elixir-editors/vim-elixir'
-Plug 'slashmili/alchemist.vim', {'for': 'elixir'}
 
 " javascript
 Plug 'maxmellon/vim-jsx-pretty'
@@ -375,34 +373,22 @@ let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
 " .. editorconfig
 let g:EditorConfig_max_line_indicator = "exceeding"
 
-" .. completor
-let g:completor_python_binary = '/usr/bin/python3'
+" .. vim-lsc
+let g:lsc_server_commands = {
+	\ 'elixir': 'elixir-ls',
+	\ 'javascript': 'typescript-language-server --stdio',
+	\ 'javascriptreact': 'typescript-language-server --stdio',
+	\ 'python': 'pylsp',
+	\ 'typescript': 'typescript-language-server --stdio',
+	\ 'typescriptreact': 'typescript-language-server --stdio',
+	\ }
 
-let g:completor_filetype_map = {}
-" let g:completor_filetype_map.elixir = {'ft': 'lsp', 'cmd': 'elixir-ls'}
-" let g:completor_filetype_map.python = {'ft': 'lsp', 'cmd': 'pylsp'}
-
-if executable('typescript-language-server')
-	let g:completor_filetype_map.javascript = {'ft': 'lsp', 'cmd': 'typescript-language-server --stdio'}
-	let g:completor_filetype_map.javascriptreact = {'ft': 'lsp', 'cmd': 'typescript-language-server --stdio'}
-	let g:completor_filetype_map.typescript = {'ft': 'lsp', 'cmd': 'typescript-language-server --stdio'}
-	let g:completor_filetype_map.typescriptreact = {'ft': 'lsp', 'cmd': 'typescript-language-server --stdio'}
-endif
-
-nnoremap K          :call completor#do('doc')<CR>
-nnoremap <leader>d  :call completor#do('definition')<CR>
-nnoremap <leader>f  :call completor#do('format')<CR>
-
-
-" elixir
-
-let g:alchemist_tag_disable = 1
-
-augroup alchemist
-	autocmd!
-	autocmd FileType elixir nnoremap <buffer> K          :call alchemist#exdoc()<CR>
-	autocmd FileType elixir nnoremap <buffer> <leader>d  :call alchemist#exdef()<CR>
-augroup END
+let g:lsc_auto_map = {
+	\ 'GoToDefinition': ['gd', '<leader>d'],
+	\ 'FindReferences': 'gr',
+	\ 'ShowHover': v:true,
+	\ 'Completion': 'completefunc',
+	\ }
 
 
 " other file types
