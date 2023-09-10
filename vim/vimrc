@@ -272,7 +272,6 @@ Plug 'gregsexton/MatchTag'
 Plug 'AndrewRadev/tagalong.vim'
 
 " jumping and searching
-Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
@@ -325,14 +324,13 @@ vmap  <leader>c    <plug>Commentary
 
 " going places
 
-" .. ack
-if executable('ag')
-	let g:ackprg = "ag --vimgrep"  " ag, in fact
-endif
-
-nnoremap  <leader>a		:Ack! 
-
 " .. fzf.vim
+
+" an ag counterpart of :RG — with the ag args from fzf#vim#ag_raw
+command! -bang -nargs=* AG call fzf#vim#grep2("ag --nogroup --column --color --", <q-args>, fzf#vim#with_preview(), <bang>0)
+
+" like the good old ack.vim
+nnoremap  <leader>a		:AG 
 
 " :Files lists all non-hidden files in the repo
 " :GFiles uses git ls-files as source — with the args passed on
