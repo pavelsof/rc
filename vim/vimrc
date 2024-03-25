@@ -269,7 +269,6 @@ Plug 'tpope/vim-surround'
 Plug 'jasonccox/vim-wayland-clipboard'
 Plug 'ap/vim-css-color'
 Plug 'gregsexton/MatchTag'
-Plug 'AndrewRadev/tagalong.vim'
 
 " jumping and searching
 Plug 'junegunn/fzf'
