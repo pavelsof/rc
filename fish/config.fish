@@ -5,8 +5,10 @@
 set -l my_locale (
 	if test (locale -a | grep C.UTF-8)
 		echo C.UTF-8
-	else
+	else if test (locale -a | grep en_DK.UTF-8)
 		echo en_DK.UTF-8
+	else
+		echo en_US.UTF-8
 	end
 )
 
