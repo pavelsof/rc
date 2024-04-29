@@ -326,11 +326,11 @@ vmap  <leader>c    <plug>Commentary
 
 " .. fzf.vim
 
-" an ag counterpart of :RG — with the ag args from fzf#vim#ag_raw
-command! -bang -nargs=* AG call fzf#vim#grep2("ag --nogroup --column --color --", <q-args>, fzf#vim#with_preview(), <bang>0)
+" like :Ag but does not ignore hidden files (except for .git dirs)
+command! -bang -nargs=* AgWithHidden call fzf#vim#ag(<q-args>, "--hidden --ignore .git", fzf#vim#with_preview(), <bang>0)
 
 " like the good old ack.vim
-nnoremap  <leader>a		:AG 
+nnoremap  <leader>a		:AgWithHidden 
 
 " :Files lists all non-hidden files in the repo
 " :GFiles uses git ls-files as source — with the args passed on
