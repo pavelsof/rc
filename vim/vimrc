@@ -58,14 +58,6 @@ set wrap  " do not overflow horizontally
 set writebackup  " create backup file while editing
 
 
-" the env var would be set by darken
-if $THEME ==? 'dark'
-	set background=dark
-else
-	set background=light
-end
-
-
 "
 " global variables
 "
