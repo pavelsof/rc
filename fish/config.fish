@@ -60,8 +60,8 @@ set -gx fish_color_error $fish_color_normal
 #
 
 # enable the default fzf key bindings: ctrl+t, ctrl+r, alt+c
-if type -q fzf_key_bindings
-	fzf_key_bindings
+if type -q fzf
+	fzf --fish | source
 end
 
 
