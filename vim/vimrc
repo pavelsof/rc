@@ -324,9 +324,8 @@ command! -bang -nargs=* AgWithHidden call fzf#vim#ag(<q-args>, "--hidden --ignor
 " like the good old ack.vim
 nnoremap  <leader>a		:AgWithHidden 
 
-" :Files lists all non-hidden files in the repo
-" :GFiles uses git ls-files as source — with the args passed on
-nnoremap  <c-p>			:GFiles --exclude-standard --cached --others<cr>
+" like the good old ctrlp.vim
+nnoremap  <c-p>			:Files<cr>
 
 
 " drawers and extras
