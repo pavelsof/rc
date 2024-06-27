@@ -43,6 +43,15 @@ if not set -q SSH_AUTH_SOCK
 	set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.sock
 end
 
+if type -q fd
+	# use fd as the default file traversing source for fzf in order to:
+	# - respect .gitignore files (fd does it by default)
+	# - include hidden files, except for those in .git/ dirs
+	# - include symlinks
+	set -gx FZF_DEFAULT_COMMAND \
+		fd --type f --hidden --exclude .git --follow --strip-cwd-prefix
+end
+
 
 #
 # theme fixes
