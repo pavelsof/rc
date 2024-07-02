@@ -338,15 +338,15 @@ let g:gundo_help=0  " disable help text
 nnoremap  <leader>u 	:GundoToggle<cr>
 
 " .. scratch
-let g:scratch_autohide=1
-let g:scratch_insert_autohide=0
-let g:scratch_height=10
-let g:scratch_top=1
-let g:scratch_horizontal=1
-let g:scratch_no_mappings=1
 
-nmap  <leader>s		<plug>(scratch-insert-reuse)
-xmap  <leader>s		<plug>(scratch-selection-reuse)
+" do not hide the scratch window when moving out of it or leaving insert mode
+let g:scratch_autohide = 0
+let g:scratch_insert_autohide = 0
+
+" location and size of the scratch window
+let g:scratch_height = 10
+let g:scratch_top = 1
+let g:scratch_horizontal = 1
 
 " .. goyo
 let g:goyo_width=83
