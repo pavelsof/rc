@@ -82,6 +82,9 @@ let g:netrw_liststyle = 3
 " browser-like new tab
 nnoremap  <c-t> 		:tabnew<cr>
 
+" open a new tab with the current file
+nnoremap  g.			:tab split<cr>
+
 " might be better than <c-tab> and <c-s-tab>
 nnoremap  <leader>1		:tabnext 1<cr>
 nnoremap  <leader>2		:tabnext 2<cr>
