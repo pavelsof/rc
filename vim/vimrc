@@ -374,8 +374,9 @@ let g:lsc_server_commands = {
 	\ }
 
 let g:lsc_auto_map = {
-	\ 'GoToDefinition': ['gd', '<leader>d'],
-	\ 'FindReferences': 'gr',
+	\ 'GoToDefinition': ['<c-]>', 'gd', '<leader>d'],
+	\ 'FindReferences': ['gr', '<leader>r'],
+	\ 'Rename': ['<leader>R'],
 	\ 'ShowHover': v:true,
 	\ 'Completion': 'completefunc',
 	\ }
