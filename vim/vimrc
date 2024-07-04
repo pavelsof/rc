@@ -177,8 +177,8 @@ inoremap  <c-p>--		 ̆
 inoremap  <c-p>-_		 ̄
 
 " make it easier to make it easier to edit
-nnoremap  <leader>ve    :vsplit $MYVIMRC<cr>
-nnoremap  <leader>vs    :source $MYVIMRC<cr>
+nnoremap  <leader>ve    :tabnew $MYVIMRC<cr>
+nnoremap  <leader>vr    :source $MYVIMRC<cr>
 
 
 "
