@@ -176,6 +176,31 @@ inoremap  <c-p>-.		ˑ
 inoremap  <c-p>--		 ̆
 inoremap  <c-p>-_		 ̄
 
+" HTML
+nnoremap  <c-h>a		a<a href="" title="" class=""></a><esc>3hi
+nnoremap  <c-h>d		a<div class=""></div><esc>5hi
+nnoremap  <c-h>e		a<em></em><esc>4hi
+nnoremap  <c-h>h1		a<h1 class=""></h1><esc>4hi
+nnoremap  <c-h>h2		a<h2 class=""></h2><esc>4hi
+nnoremap  <c-h>h3		a<h3 class=""></h3><esc>4hi
+nnoremap  <c-h>i		a<img src="" title="" class="" /><esc>21hi
+nnoremap  <c-h>l		a<li class=""></li><esc>4hi
+nnoremap  <c-h>p		a<p class=""></p><esc>3hi
+nnoremap  <c-h>s		a<strong></strong><esc>8hi
+nnoremap  <c-h>u		a<ul class=""></ul><esc>4hi
+
+inoremap  <c-h>a		<a href="" title="" class=""></a><esc>3hi
+inoremap  <c-h>d		<div class=""></div><esc>5hi
+inoremap  <c-h>e		<em></em><esc>4hi
+inoremap  <c-h>h1		<h1 class=""></h1><esc>4hi
+inoremap  <c-h>h2		<h2 class=""></h2><esc>4hi
+inoremap  <c-h>h3		<h3 class=""></h3><esc>4hi
+inoremap  <c-h>i		<img src="" title="" class="" /><esc>21hi
+inoremap  <c-h>l		<li class=""></li><esc>4hi
+inoremap  <c-h>p		<p class=""></p><esc>3hi
+inoremap  <c-h>s		<strong></strong><esc>8hi
+inoremap  <c-h>u		<ul class=""></ul><esc>4hi
+
 " make it easier to make it easier to edit
 nnoremap  <leader>ve    :tabnew $MYVIMRC<cr>
 nnoremap  <leader>vr    :source $MYVIMRC<cr>
