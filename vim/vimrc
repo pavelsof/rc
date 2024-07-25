@@ -62,6 +62,11 @@ set writebackup  " create backup file while editing
 " global variables
 "
 
+" enable undercurl in kitty (and other terminals which support it)
+" incantations copied directly from :h undercurl
+let &t_Cs = "\e[4:3m"
+let &t_Ce = "\e[4:0m"
+
 " fix termguicolors in tmux
 if &term =~# '^screen' || &term =~# '^tmux'
 	let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
