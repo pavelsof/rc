@@ -250,3 +250,6 @@ exec_always dunst
 
 # reload the configuration file
 bindsym $mod+Shift+r reload
+
+# exit sway
+bindsym $mod+Shift+q exit
