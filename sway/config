@@ -192,17 +192,21 @@ bindsym $mod+r mode "resize"
 # programs
 #
 
-# start a terminal
+# open a terminal
 bindsym $mod+Return exec kitty
 
-# kill focused window
+# kill the focused window
 bindsym $mod+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+p exec dmenu_run
-bindsym $mod+a exec dmenu_run
+# start the program launcher
+bindsym $mod+a exec kitty --app-id launcher sway-launcher-desktop
 
-# lock screen
+for_window [app_id="^launcher$"] \
+	floating enable, \
+	resize set 30 ppt 60 ppt, \
+	border pixel 10
+
+# lock the screen
 bindsym $mod+e exec swaylock -c 000000
 
 
