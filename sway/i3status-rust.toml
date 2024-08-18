@@ -19,6 +19,7 @@ cycle = [5, 10, 20, 50, 100]
 
 [[block]]
 block = "hueshift"
+click_temp = 4500
 format = "$temperature K "
 
 [[block]]
