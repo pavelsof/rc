@@ -44,7 +44,7 @@ bindsym XF86MonBrightnessUp exec "brightnessctl set 1%+"
 # redden the screen
 #
 
-exec_always wl-gammarelay
+exec_always wl-gammarelay-rs
 
 
 #
