@@ -108,6 +108,9 @@ nnoremap  <c-s>			:w<cr>
 " easier :noh
 nnoremap  <leader><space>	:noh<cr>
 
+" open a line below without leaving normal mode
+nnoremap  +				o<esc>
+
 " spells
 nnoremap  <c-l>b		:setlocal spell spelllang=bg<cr>
 nnoremap  <c-l>d		:setlocal spell spelllang=de<cr>
