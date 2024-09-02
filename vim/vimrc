@@ -337,6 +337,8 @@ call plug#end()
 " theme and ui
 
 " .. gruvbox
+let g:gruvbox_italic = 1
+
 colorscheme gruvbox
 
 " .. airline
