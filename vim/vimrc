@@ -420,6 +420,16 @@ let g:lsc_auto_map = {
 	\ 'Completion': 'completefunc',
 	\ }
 
+" red undercurl for errors
+highlight link lscDiagnosticError SpellCap
+
+" purple undercurl for warnings
+highlight link lscDiagnosticWarning SpellRare
+
+" aqua undercurl for info and hints
+highlight link lscDiagnosticInfo SpellLocal
+highlight link lscDiagnosticHint SpellLocal
+
 
 " other file types
 
