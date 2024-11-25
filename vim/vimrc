@@ -335,6 +335,7 @@ Plug 'fladson/vim-kitty', {'for': 'kitty'}
 Plug 'chr4/nginx.vim', {'for': 'nginx'}
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
+Plug 'hashivim/vim-terraform', {'for': 'terraform'}
 Plug 'cespare/vim-toml', {'for': 'toml'}
 
 call plug#end()
