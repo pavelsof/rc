@@ -325,18 +325,18 @@ Plug 'elixir-editors/vim-elixir'
 
 " javascript
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
+Plug 'leafgarland/typescript-vim'
 
 " other file types
-Plug 'dart-lang/dart-vim-plugin'  " lazy loading only works after one open
-Plug 'dag/vim-fish', {'for': 'fish'}
+Plug 'cespare/vim-toml'
+Plug 'chr4/nginx.vim'
+Plug 'dag/vim-fish'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'fladson/vim-kitty'
+Plug 'hashivim/vim-terraform'
 Plug 'jparise/vim-graphql'
-Plug 'fladson/vim-kitty', {'for': 'kitty'}
-Plug 'chr4/nginx.vim', {'for': 'nginx'}
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-Plug 'LaTeX-Box-Team/LaTeX-Box', {'for': 'tex'}
-Plug 'hashivim/vim-terraform', {'for': 'terraform'}
-Plug 'cespare/vim-toml', {'for': 'toml'}
+Plug 'latex-box-team/latex-box'
+Plug 'raimon49/requirements.txt.vim'
 
 call plug#end()
 
