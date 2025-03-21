@@ -75,6 +75,31 @@ end
 
 
 #
+# abbreviations
+#
+
+# git
+abbr --add ga -- git add
+abbr --add gaa -- git add --all
+abbr --add gb -- git branch
+abbr --add gc --set-cursor -- git commit -am \"%\"
+abbr --add gca -- git commit --amend
+abbr --add gd -- git diff
+abbr --add gdc -- git diff --cached
+abbr --add gi -- git
+abbr --add gl -- git log
+abbr --add gm -- git merge
+abbr --add go -- git checkout
+abbr --add gob -- git checkout -b
+abbr --add gp -- git pull
+abbr --add gs -- git status
+abbr --add gu -- git push
+
+# kitty
+abbr --add ki -- kitten icat
+
+
+#
 # distro-specific
 #
 
