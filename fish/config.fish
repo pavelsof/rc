@@ -3,10 +3,8 @@
 #
 
 set -l my_locale (
-	if test (locale -a | grep C.UTF-8)
+	if test (locale --all-locales | grep -i C.UTF)
 		echo C.UTF-8
-	else if test (locale -a | grep en_DK.UTF-8)
-		echo en_DK.UTF-8
 	else
 		echo en_US.UTF-8
 	end
@@ -17,9 +15,9 @@ set -gx LC_ADDRESS $my_locale
 set -gx LC_COLLATE $my_locale
 set -gx LC_CTYPE $my_locale
 set -gx LC_IDENTIFICATION $my_locale
-set -gx LC_MONETARY $my_locale
-set -gx LC_MESSAGES $my_locale
 set -gx LC_MEASUREMENT $my_locale
+set -gx LC_MESSAGES $my_locale
+set -gx LC_MONETARY $my_locale
 set -gx LC_NAME $my_locale
 set -gx LC_NUMERIC $my_locale
 set -gx LC_PAPER $my_locale
