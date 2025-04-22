@@ -3,7 +3,7 @@
 #
 
 set -l my_locale (
-	if test (locale --all-locales | grep -i C.UTF)
+	if test (locale -a | grep -i C.UTF)
 		echo C.UTF-8
 	else
 		echo en_US.UTF-8
