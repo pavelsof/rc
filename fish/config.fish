@@ -98,6 +98,21 @@ abbr --add ki -- kitten icat
 
 
 #
+# functions
+#
+
+function ls --description "ls that shows the directories first"
+	set -l params --color=auto --group-directories-first
+
+	if isatty stdout
+		set params $params --indicator-style=classify
+	end
+
+	command ls $params $argv
+end
+
+
+#
 # distro-specific
 #
 
@@ -126,6 +141,21 @@ if test (uname -a | grep Ubuntu)
 	# fix cal to start the week with the day of the moon
 	function cal -w ncal
 		ncal -b -M $argv
+	end
+
+end
+
+if test (uname -s | grep Darwin)
+
+	# overwrite the ls function defined above
+	function ls -w ls
+		set -l params -G
+
+		if isatty stdout
+			set params $params -F
+		end
+
+		command ls $params $argv
 	end
 
 end
