@@ -96,6 +96,10 @@ abbr --add gu -- git push
 # kitty
 abbr --add ki -- kitten icat
 
+# ruff
+abbr --add rc -- ruff check
+abbr --add rf -- ruff format
+
 
 #
 # functions
