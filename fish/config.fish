@@ -35,6 +35,11 @@ set -gx EDITOR vim
 # add ~/bin to the PATH
 set -gx PATH $PATH ~/bin
 
+# on macOS: add the homebrew env vars and paths
+if test (uname -s | grep Darwin)
+	/opt/homebrew/bin/brew shellenv | source
+end
+
 # on ubuntu: SSH_AUTH_SOCK would be already set
 # on arch: complements ~/.config/systemd/user/ssh-agent.service
 if not set -q SSH_AUTH_SOCK
@@ -117,7 +122,7 @@ end
 
 
 #
-# distro-specific
+# distro-specific functions
 #
 
 if test (uname -a | grep arch)
