@@ -33,7 +33,7 @@ set -gx LC_TIME $my_locale
 set -gx EDITOR vim
 
 # add ~/bin to the PATH
-set -gx PATH $PATH ~/bin
+set -gx PATH ~/bin $PATH
 
 # on macOS: add the homebrew env vars and paths
 if test (uname -s | grep Darwin)
