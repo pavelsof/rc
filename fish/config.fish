@@ -120,6 +120,16 @@ function ls --description "ls that shows the directories first"
 	command ls $params $argv
 end
 
+function auto_source_venv --on-variable PWD
+	if test -d venv
+		if set -q VIRTUAL_ENV
+			deactivate
+		end
+
+		source venv/bin/activate.fish
+	end
+end
+
 
 #
 # distro-specific functions
