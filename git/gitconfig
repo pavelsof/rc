@@ -4,6 +4,9 @@
 [color]
 	ui = true
 
+[diff]
+	algorithm = histogram
+
 [user]
 	name = pavelsof
 	email = mail@pavelsof.com
