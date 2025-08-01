@@ -1,7 +1,12 @@
-[color]
-	ui = true
 [core]
 	editor = vim
+
+[color]
+	ui = true
+
 [user]
-	email = mail@pavelsof.com
 	name = pavelsof
+	email = mail@pavelsof.com
+
+[include]
+	path = ~/.gitconfig_local
