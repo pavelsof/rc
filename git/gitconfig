@@ -7,6 +7,33 @@
 [diff]
 	algorithm = histogram
 
+	# colour moved lines in a diff differently from added/removed lines
+	colorMoved = plain
+
+	# use different one-letter prefix pairs based on what is being compared
+	mnemonicPrefix = true
+
+	# detect copies in addition to renames
+	renames = copies
+
+[fetch]
+	# before fetching, remove any remote-tracking references that no longer
+	# exist on the remote
+	prune = true
+
+[merge]
+	# when writing a conflicted hunk to the working tree files, after showing
+	# the changes made by both sides, also show the original text
+	conflictStyle = zdiff3
+
+[push]
+	# assume --set-upstream on push when no upstream tracking exists for the
+	# current branch
+	autoSetupRemote = true
+
+[tag]
+	sort = version:refname
+
 [user]
 	name = pavelsof
 	email = mail@pavelsof.com
