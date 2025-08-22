@@ -326,6 +326,7 @@ Plug 'vimwiki/vimwiki'
 
 " coding
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ggml-org/llama.vim'
 Plug 'natebosch/vim-lsc'
 
 " elixir
@@ -416,6 +417,14 @@ let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
 
 " .. editorconfig
 let g:EditorConfig_max_line_indicator = "exceeding"
+
+" .. llama.vim
+
+" do not show info about the inference
+let g:llama_config = { 'show_info': 0 }
+
+" use grey for the suggestions
+highlight link llama_hl_hint GruvboxGray
 
 " .. vim-lsc
 let g:lsc_server_commands = {
