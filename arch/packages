@@ -1,0 +1,52 @@
+# pacstrap
+base
+linux
+linux-firmware
+amd-ucode
+iwd
+vim
+man-db
+man-pages
+texinfo
+
+# cli
+base-devel
+bat
+brightnessctl
+fd
+fish
+fzf
+git
+limine
+mullvad-vpn-cli
+openssh
+pass
+reflector
+sudo
+the_silver_searcher
+ufw
+wget
+which
+
+# ♫
+alsa-utils
+pulseaudio
+pulseaudio-alsa
+
+# gui
+dunst
+i3status-rust
+kitty
+libnotify
+noto-fonts
+noto-fonts-emoji
+noto-fonts-extra
+otf-font-awesome
+sway
+swaybg
+swaylock
+sway-launcher-desktop
+ttf-fira-code
+ttf-ubuntu-font-family
+wl-clipboard
+wl-gammarelay-rs
