@@ -227,7 +227,7 @@ bar {
 	bindsym button5 nop
 
 	# fc-list | grep -i awesome
-	font pango:Fira Code SemiBold, Font Awesome 6 Free 10
+	font pango:Fira Code SemiBold, Font Awesome 7 Free 9
 
 	# gruvbox dark
 	colors {
