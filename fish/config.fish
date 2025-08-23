@@ -142,6 +142,12 @@ if test (uname -a | grep arch)
 		command cal -m $argv
 	end
 
+	# force electron apps to use wayland
+	set -gx ELECTRON_OZONE_PLATFORM_HINT wayland
+
+	# fix java apps to open in wayland
+	set -gx _JAVA_AWT_WM_NONREPARENTING 1
+
 end
 
 if test (uname -a | grep Ubuntu)
