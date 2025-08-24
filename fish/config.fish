@@ -41,9 +41,9 @@ if test (uname -s | grep Darwin)
 end
 
 # on ubuntu: SSH_AUTH_SOCK would be already set
-# on arch: complements ~/.config/systemd/user/ssh-agent.service
+# on arch: complements systemctl enable --user ssh-agent.service
 if not set -q SSH_AUTH_SOCK
-	set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.sock
+	set -gx SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
 end
 
 if type -q fd
