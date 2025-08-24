@@ -101,7 +101,9 @@ abbr --add gs -- git status
 abbr --add gu -- git push
 
 # kitty
+abbr --add kc -- kitten clipboard
 abbr --add ki -- kitten icat
+abbr --add kp -- kitten clipboard --get-clipboard
 
 # ruff
 abbr --add rc -- ruff check
