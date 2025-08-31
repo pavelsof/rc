@@ -53,3 +53,6 @@ ttf-fira-code
 ttf-ubuntu-font-family
 wl-clipboard
 wl-gammarelay-rs
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
