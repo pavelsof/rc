@@ -30,8 +30,11 @@ which
 
 # ♫
 alsa-utils
-pulseaudio
-pulseaudio-alsa
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+wireplumber
 
 # gui
 dunst
