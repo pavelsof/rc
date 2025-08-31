@@ -1,29 +1,60 @@
 function darken
-	set config_dir ~/.config/kitty
-	set future
+	argparse 'v/verbose' -- $argv
 
-	switch (basename (readlink $config_dir/current_theme))
-		case gruvbox_dark.conf;
-			set future light
-		case gruvbox_light.conf
-			set future dark
-		case '*'
-			return 1
+	# light or dark
+	set new_theme
+
+	# determine which is the current and which will be the new one
+	begin
+		set -l last_theme
+
+		switch (basename (readlink ~/.config/kitty/current_theme))
+			case gruvbox_light.conf
+				set last_theme light
+				set new_theme dark
+			case gruvbox_dark.conf
+				set last_theme dark
+				set new_theme light
+			case '*'
+				set last_theme unknown
+				set new_theme light
+		end
+
+		if set -q _flag_verbose
+			echo "Current theme: $last_theme"
+			echo "New theme: $new_theme"
+		end
 	end
 
 	# kitty
-	set theme $config_dir/themes/gruvbox_$future.conf
+	begin
+		set -l theme_path ~/.config/kitty/themes/gruvbox_$new_theme.conf
 
-	for sock in (ls -1 $XDG_RUNTIME_DIR/kitty.sock*)
-		kitty @ --to unix:$sock set-colors $theme
+		ln -sf $theme_path ~/.config/kitty/current_theme
+
+		if set -q _flag_verbose
+			echo "Kitty: symlinked current_theme to $theme_path"
+		end
+
+		for socket in (ls -1 $XDG_RUNTIME_DIR/kitty-*)
+			kitty @ --to unix:$socket \
+					set-colors --all --configured $theme_path
+
+			if set -q _flag_verbose
+				echo "Kitty: sent message to $socket"
+			end
+		end
 	end
 
-	ln -sf $theme $config_dir/current_theme
+	# GTK
+	begin
+		set -l color_scheme "'prefer-$new_theme'"
 
-	# vim
-	set -Ux THEME $future
+		# assume that xdg-desktop-portal-gtk is installed
+		gsettings set org.gnome.desktop.interface color-scheme $color_scheme
 
-	for name in (vim --serverlist)
-		vim --servername $name --remote-send ":set background=$future<CR>"
+		if set -q _flag_verbose
+			echo "GTK: set the color scheme to $color_scheme"
+		end
 	end
 end
