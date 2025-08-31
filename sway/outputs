@@ -1,7 +1,15 @@
 # swaymsg -t get_outputs
+
 output DP-3 {
 	mode 2560x1440
 	scale 1.5
+	# (2560 / 1.5 - 2256 / 2) / 2 = 289
+	# 1440 / 1.5 = 960
+	position -289 -960
+}
+
+output eDP-1 {
+	position 0 0
 }
 
 output "*" bg /home/pavelsof/penguins/image.jpg fit #ffffff
