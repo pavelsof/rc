@@ -26,6 +26,13 @@ input type:touchpad {
 
 
 #
+# mouse
+#
+
+seat * hide_cursor when-typing enable
+
+
+#
 # displays
 #
 
