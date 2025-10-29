@@ -17,6 +17,7 @@ fd
 fish
 fzf
 git
+htop
 limine
 mullvad-vpn-cli
 openssh
@@ -56,3 +57,8 @@ wl-gammarelay-rs
 xdg-desktop-portal
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
+
+# desktop
+firefox
+firefox-developer-edition
+flatpak
