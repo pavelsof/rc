@@ -1,5 +1,6 @@
 function darken
 	argparse 'v/verbose' -- $argv
+	or return
 
 	# light or dark
 	set new_theme
