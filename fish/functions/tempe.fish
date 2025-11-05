@@ -1,10 +1,8 @@
+# create a temp dir and go there
 # inspired by https://evanhahn.com/scripts-i-wrote-that-i-use-all-the-time/
-function murder --wraps kill
+function tempe
 	argparse -- $argv
 	or return
 
-	kill \
-		--signal TERM \
-		--timeout 1000 KILL \
-		$argv
+	cd (mktemp -d)
 end
