@@ -12,6 +12,7 @@ texinfo
 # cli
 base-devel
 bat
+borg
 brightnessctl
 fd
 fish
@@ -25,6 +26,7 @@ pass
 reflector
 sudo
 the_silver_searcher
+udisks2
 ufw
 wget
 which
@@ -42,6 +44,7 @@ dunst
 i3status-rust
 kitty
 libnotify
+mpv
 noto-fonts
 noto-fonts-emoji
 noto-fonts-extra
@@ -62,3 +65,14 @@ xdg-desktop-portal-wlr
 firefox
 firefox-developer-edition
 flatpak
+
+# dev
+elixir
+elixir-ls
+erlang
+jq
+nodejs
+npm
+postgresql
+python-lsp-server
+typescript-language-server
