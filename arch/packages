@@ -73,8 +73,11 @@ elixir
 elixir-ls
 erlang
 jq
+llama.cpp
 nodejs
 npm
 postgresql
 python-lsp-server
+rust-analyzer
+rustup
 typescript-language-server
