@@ -346,6 +346,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'jparise/vim-graphql'
 Plug 'latex-box-team/latex-box'
 Plug 'raimon49/requirements.txt.vim'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -432,6 +433,7 @@ let g:lsc_server_commands = {
 	\ 'javascript': 'typescript-language-server --stdio',
 	\ 'javascriptreact': 'typescript-language-server --stdio',
 	\ 'python': 'pylsp',
+	\ 'rust': 'rust-analyzer',
 	\ 'typescript': 'typescript-language-server --stdio',
 	\ 'typescriptreact': 'typescript-language-server --stdio',
 	\ }
@@ -464,3 +466,6 @@ let g:dart_format_on_save = 1
 " .. latex
 let g:LatexBox_Folding=1  " enable folding
 let g:LatexBox_latexmk_options="-xelatex"
+
+" .. rust
+let g:rustfmt_autosave = 1
