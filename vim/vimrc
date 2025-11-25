@@ -112,10 +112,9 @@ nnoremap  <leader><space>	:noh<cr>
 nnoremap  +				o<esc>
 
 " spells
-nnoremap  <c-l>b		:setlocal spell spelllang=bg<cr>
-nnoremap  <c-l>d		:setlocal spell spelllang=de<cr>
-nnoremap  <c-l>e		:setlocal spell spelllang=en_gb<cr>
-nnoremap  <c-l><space>	:setlocal nospell<cr>
+nnoremap  <leader>l			:setlocal spell! spelllang=
+nnoremap  <leader>bg		:setlocal spell! spelllang=bg<cr>
+nnoremap  <leader>en		:setlocal spell! spelllang=en_gb<cr>
 
 " IPA
 inoremap  <c-p>			<nop>
