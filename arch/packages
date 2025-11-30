@@ -12,6 +12,7 @@ texinfo
 # cli
 base-devel
 bat
+bluetui
 borg
 brightnessctl
 fd
