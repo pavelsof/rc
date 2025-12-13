@@ -47,7 +47,6 @@ dunst
 i3status-rust
 kitty
 libnotify
-mpv
 noto-fonts
 noto-fonts-emoji
 noto-fonts-extra
@@ -60,14 +59,17 @@ ttf-fira-code
 ttf-ubuntu-font-family
 wl-clipboard
 wl-gammarelay-rs
-xdg-desktop-portal
-xdg-desktop-portal-gtk
-xdg-desktop-portal-wlr
 
-# desktop
+# desktop applications
+evince
 firefox
 firefox-developer-edition
 flatpak
+mpv
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
+xdg-user-dirs
 
 # dev
 elixir
