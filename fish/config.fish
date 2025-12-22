@@ -83,6 +83,9 @@ end
 # abbreviations
 #
 
+# flatpak
+abbr --add fl -- flatpak --user
+
 # git
 abbr --add ga -- git add
 abbr --add gaa -- git add --all
@@ -104,6 +107,9 @@ abbr --add gu -- git push
 abbr --add kc -- kitten clipboard
 abbr --add ki -- kitten icat
 abbr --add kp -- kitten clipboard --get-clipboard
+
+# mullvad
+abbr --add ml -- mullvad
 
 # ruff
 abbr --add rc -- ruff check
