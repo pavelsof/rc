@@ -116,6 +116,9 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
+# toggle the quake-like terminal
+bindsym $mod+grave exec kitten quick-access-terminal
+
 
 #
 # moving around

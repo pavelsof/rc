@@ -11,7 +11,7 @@ else
 	echo $config_dir → created
 end
 
-for item in kitty.conf linux.conf macos.conf ssh.conf themes
+for item in kitty.conf linux.conf macos.conf quick-access-terminal.conf ssh.conf themes
 	if test -e $config_dir/$item
 		echo $config_dir/$item → already exists
 	else
