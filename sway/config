@@ -253,6 +253,9 @@ bar {
 # desktop notifications
 exec_always dunst
 
+# run htop as desktop wallpaper
+exec_always fish -c wallpaper
+
 
 #
 # meta
