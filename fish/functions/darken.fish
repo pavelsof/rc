@@ -42,8 +42,19 @@ function darken
 					set-colors --all --configured $theme_path
 
 			if set -q _flag_verbose
-				echo "Kitty: sent message to $socket"
+				echo "kitty: sent message to $socket"
 			end
+		end
+	end
+
+	# bat
+	begin
+		set -l new_config_path ~/.config/bat/config_$new_theme
+
+		ln -sf $new_config_path ~/.config/bat/config
+
+		if set -q _flag_verbose
+			echo "bat: symlinked config to $new_config_path"
 		end
 	end
 

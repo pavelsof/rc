@@ -21,7 +21,7 @@ for item in kitty.conf linux.conf macos.conf quick-access-terminal.conf ssh.conf
 end
 
 
-# current_theme is a symlink to the symlink of the theme
+# current_theme is a symlink to the theme
 set default_theme $config_dir/themes/gruvbox_light.conf
 
 if test -e $config_dir/current_theme
