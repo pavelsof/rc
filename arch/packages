@@ -15,6 +15,7 @@ bat
 bluetui
 borg
 brightnessctl
+btop
 fd
 fish
 framework-system
@@ -31,6 +32,7 @@ sudo
 the_silver_searcher
 udisks2
 ufw
+unzip
 wget
 which
 
