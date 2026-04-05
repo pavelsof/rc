@@ -77,10 +77,12 @@ xdg-user-dirs
 elixir
 elixir-ls
 erlang
+inotify-tools
 jq
 llama.cpp
 nodejs
 npm
+opencode
 postgresql
 python-lsp-server
 rust-analyzer
