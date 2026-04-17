@@ -1,0 +1,14 @@
+{
+  "$schema": "https://opencode.ai/tui.json",
+  "theme": "gruvbox",
+  "keybinds": {
+    "app_exit": "ctrl+q",
+    "session_list": "ctrl+o",
+    "messages_line_up": "ctrl+y",
+    "messages_line_down": "ctrl+e",
+    "messages_half_page_up": "ctrl+u",
+    "messages_half_page_down": "ctrl+d",
+    "messages_next": "ctrl+j",
+    "messages_previous": "ctrl+k"
+  }
+}
