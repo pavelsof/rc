@@ -115,6 +115,12 @@ abbr --add ml -- mullvad
 abbr --add rc -- ruff check
 abbr --add rf -- ruff format
 
+# terraform
+abbr --add ta -- terraform apply
+abbr --add te -- terraform
+abbr --add tf -- terraform fmt -recursive
+abbr --add tp -- terraform plan
+
 
 #
 # functions
