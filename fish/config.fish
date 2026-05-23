@@ -108,6 +108,10 @@ abbr --add kc -- kitten clipboard
 abbr --add ki -- kitten icat
 abbr --add kp -- kitten clipboard --get-clipboard
 
+# mix
+abbr --add mf -- mix format
+abbr --add mt -- mix test
+
 # mullvad
 abbr --add ml -- mullvad
 
