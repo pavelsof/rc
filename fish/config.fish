@@ -115,6 +115,9 @@ abbr --add mt -- mix test
 # mullvad
 abbr --add ml -- mullvad
 
+# django
+abbr --add pm -- python manage.py
+
 # ruff
 abbr --add rc -- ruff check
 abbr --add rf -- ruff format
