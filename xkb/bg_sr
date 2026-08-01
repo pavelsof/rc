@@ -1,0 +1,14 @@
+partial alphanumeric_keys
+xkb_symbols "basic" {
+  include "bg(phonetic)"
+
+  name[Group1] = "Bulgarian phonetic + Serbian letters";
+
+  key <TLDE> {[ Cyrillic_che,      Cyrillic_CHE,      Serbian_tshe,     Serbian_TSHE   ]};
+  key <AC03> {[ Cyrillic_de,       Cyrillic_DE,       Serbian_dje,      Serbian_DJE    ]};
+  key <AC07> {[ Cyrillic_shorti,   Cyrillic_SHORTI,   Cyrillic_je,      Cyrillic_JE    ]};
+  key <AC09> {[ Cyrillic_el,       Cyrillic_EL,       Cyrillic_lje,     Cyrillic_LJE   ]};
+  key <AB02> {[ Cyrillic_softsign, Cyrillic_SOFTSIGN, Cyrillic_yeru,    Cyrillic_YERU  ]};
+  key <AB04> {[ Cyrillic_zhe,      Cyrillic_ZHE,      Cyrillic_dzhe,    Cyrillic_DZHE  ]};
+  key <AB06> {[ Cyrillic_en,       Cyrillic_EN,       Cyrillic_nje,     Cyrillic_NJE   ]};
+};
