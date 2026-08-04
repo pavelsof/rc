@@ -105,8 +105,10 @@ abbr --add gu -- git push
 
 # kitty
 abbr --add kc -- kitten clipboard
+abbr --add kd -- kitten transfer --direction download
 abbr --add ki -- kitten icat
 abbr --add kp -- kitten clipboard --get-clipboard
+abbr --add ku -- kitten transfer --direction upload
 
 # mix
 abbr --add mf -- mix format
