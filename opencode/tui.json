@@ -3,7 +3,10 @@
   "theme": "gruvbox",
   "keybinds": {
     "app_exit": "ctrl+q",
+    "session_new": "ctrl+n",
     "session_list": "ctrl+o",
+    "session_fork": "ctrl+f",
+    "model_list": "ctrl+m",
     "messages_line_up": "ctrl+y",
     "messages_line_down": "ctrl+e",
     "messages_half_page_up": "ctrl+u",
