@@ -147,12 +147,17 @@ end
 
 function auto_source_venv --on-variable PWD
 	if test -d venv
-		if set -q VIRTUAL_ENV
+		if set -q VIRTUAL_ENV; and functions -q deactivate
 			deactivate
 		end
 
 		source venv/bin/activate.fish
 	end
+end
+
+# in case we spawn a shell in a dir with a venv
+if status is-interactive
+	auto_source_venv
 end
 
 
