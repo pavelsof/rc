@@ -4,7 +4,15 @@ function now
 
 	# determine the timezone
 	if test (count $argv) -gt 0
-		set matches (timedatectl list-timezones | grep -i $argv[1])
+		if command -q timedatectl
+			set matches (timedatectl list-timezones | string match -ie -- $argv[1])
+		else
+			# fall back on zone.tab (does not include UTC) on macOS
+			set -l timezones (string match -rg '^[A-Z]{2}\t\S+\t(\S+)' </usr/share/zoneinfo/zone.tab)
+			set -a timezones UTC
+			set matches (string match -ie -- $argv[1] $timezones)
+		end
+
 		set num_matches (count $matches)
 		set timezone
 
@@ -15,7 +23,7 @@ function now
 			set timezone $matches[1]
 		else
 			# e.g. Etc/UTC and UTC
-			set full_matches (timedatectl list-timezones | grep -ix $argv[1])
+			set full_matches (string match -i -- $argv[1] $matches)
 
 			if test (count $full_matches) -eq 1
 				set timezone $full_matches[1]
