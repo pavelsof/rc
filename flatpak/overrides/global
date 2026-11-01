@@ -1,0 +1,12 @@
+[Context]
+# block all except for pulseaudio and wayland
+sockets=!cups;!fallback-x11;!gpg-agent;!inherit-wayland-socket;!pcsc;!session-bus;!ssh-auth;!system-bus;!x11;
+
+# only allow DRI graphics devices
+devices=!all;dri;
+
+# ignore all filesystem permissions from app manifests
+filesystems=!host:reset;
+
+# block all
+features=!bluetooth;!canbus;!devel;!multiarch;!per-app-dev-shm;
